@@ -11,6 +11,7 @@ test("Crear mapa",()=>{
     const distribucion=new Centro("Distribucion",6);
     const centros=[facturacion,calidad,distribucion];
     const locales=[local];
+    const destinos=[destino];
     const colaEsperas=[3,4,5];
     const mapa=new Mapa(locales,destinos,colaEsperas,centros);
     expect(mapa[0].length).toBe(colaEsperas.length+1);
