@@ -14,7 +14,7 @@ beforeEach(()=>{
     const locales=[local];
     const destinos=[destino];
     const colaEsperas=[3,4,5];
-    const mapa=new Mapa(locales,destinos,colaEsperas,centros);
+    mapa=new Mapa(locales,destinos,colaEsperas,centros);
 })
 
 test("Crear mapa",()=>{
