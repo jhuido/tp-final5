@@ -2,7 +2,7 @@ const Centro = require("../src/Centro");
 const Destino = require("../src/Destino");
 const Local = require("../src/Local");
 const Mapa = require("../src/Mapa");
-
+/*
 var mapa;
 beforeEach(()=>{
     const local=new Local("A");
@@ -82,12 +82,14 @@ test("Cantidad de columnas mayor o igual a filas",()=>{
     expect(()=>new Mapa(locales2,destinos2,[1],centros1)).toThrow("Columnas debe ser mayor o igual a cantidad de locales");
 
 })
+*/
 
 test("Mapa tiene más de una fila",()=>{
     var locales2=[new Local("A"),new Local("B")];
     var destinos2=[new Destino(1),new Destino(2)];
     var centros2=(new Centro("Facturacion",3),new Centro("Calidad",5),new Centro("Distribucion",4));
     var mapa=new Mapa(locales2,destinos2,[[4,3,5],[3,7,5]],centros2);
+    console.log(mapa.mapa);
     expect(mapa.mapa[0][1][1]).toBe(4);
     expect(mapa.mapa[0][2][1]).toBe(3);
     expect(mapa.mapa[0][3][1]).toBe(5);
