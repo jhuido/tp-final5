@@ -27,7 +27,7 @@ function Mapa(locales,destinos,colaEsperas,centros){
 
     this.moverPaquetes=function(){
         var columnas=this.mapa.length;
-        for(i=columnas-2;i>=0;i--){
+        for(i=columnas-1;i>=0;i--){
             if(i==0){
                 var paquetes=this.locales[0].coladeSalida;
                 paquetes.forEach(paquete => {
