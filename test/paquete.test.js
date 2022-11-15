@@ -1,5 +1,7 @@
 const Destino = require("../src/Destino");
 const Local = require("../src/Local");
+const Centro = require("../src/Centro");
+const Mapa= require("../src/Mapa");
 
 test("Crear Paquete",()=>{
     const local=new Local("A");
