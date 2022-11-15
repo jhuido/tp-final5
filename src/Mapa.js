@@ -37,6 +37,12 @@ function Mapa(locales,destinos,colaEsperas,centros){
     }
 
     this.moverPaquetes=function(){
+        var paquetes=this.locales[0].coladeSalida;
+        this.centros[0].agregarPaquetes(paquetes);
+        this.locales[0].quitarPaquetes(paquetes);
+        this.mapa[0][1][0]+=this.mapa[0][0];
+        this.mapa[0][0]=0;
+        /*
         for(j=0;j<this.filas;j++){
             for(i=parseInt(this.columnas-1);i>=0;i--){
                 if(i==0){
@@ -61,7 +67,7 @@ function Mapa(locales,destinos,colaEsperas,centros){
                 }
             }
         }
-
+        */
     };
 }
 

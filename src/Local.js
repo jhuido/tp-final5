@@ -11,6 +11,16 @@ function Local(nombre){
             this.coladeSalida.push(paquete);
         });
     }
+
+    this.quitarPaquetes=function(paquetes){
+        var index;
+        paquetes.forEach(element => {
+            index=this.coladeSalida.findIndex(paquete=>paquete==element);
+            if(index!=-1){
+                this.coladeSalida.splice(index,1);
+            }
+        });
+    }
 }
 
 module.exports=Local;
