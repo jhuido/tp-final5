@@ -33,7 +33,6 @@ test("Paquete en cola de salida",()=>{
     console.log(mapa);
     mapa.localGenerePaquete(local,[[destino,2]]);
     console.log(mapa);
-    console.lof
     expect(mapa.mapa[0]).toBe(2);
     expect(local.coladeSalida.length).toBe(2);
 })
