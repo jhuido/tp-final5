@@ -2,7 +2,7 @@ function Mapa(locales,destinos,colaEsperas,centros){
     this.locales=locales;
     this.destinos=destinos;
     this.centros=centros;
-    this.filas=locales.lenght;
+    this.filas=destinos.lenght;
     this.mapa=asignar(colaEsperas);
 
     function asignar(colaEsperas){
@@ -17,7 +17,7 @@ function Mapa(locales,destinos,colaEsperas,centros){
 
     this.localGenerePaquete=function(local,destinos){
         local.generePaquete(destinos);
-        this.mapa[0]+=1;
+        this.mapa[0]+=destinos.lenght;
     }
 }
 
