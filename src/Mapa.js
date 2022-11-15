@@ -31,7 +31,7 @@ function Mapa(locales,destinos,colaEsperas,centros){
             if(i==0){
                 var paquetes=this.locales[0].coladeSalida;
                 paquetes.forEach(paquete => {
-                    paquete.aumentarYiempo();
+                    paquete.aumentarTiempo();
                 });
                 console.log("PAquetes: "+paquetes);
                 this.centros[0].agregarPaquetes(paquetes);
