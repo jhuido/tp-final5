@@ -2,6 +2,7 @@ const Destino = require("../src/Destino");
 const Local = require("../src/Local");
 const Centro = require("../src/Centro");
 const Mapa= require("../src/Mapa");
+const Producto = require("../src/Producto");
 
 var mapa;
 beforeEach(()=>{
@@ -30,4 +31,11 @@ test("Paquete llega a tiempo?",()=>{
     mapa.moverPaquetes();
     expect(mapa.destinos[0].paquetes[0].llegoATiempo()).toBe(true);
     expect(mapa.destinos[0].paquetes[1].llegoATiempo()).toBe(true);
+})
+
+test("Crear Paquete con productos",()=>{
+    var tornillo=new Producto("tornillo");
+    var clavo=new Producto("clavo");
+    mapa.localGenerePaquete(mapa.locales[0],[[mapa.destinos[0],4,[[clavo,3],[tornillo,5]]],[mapa.destinos[0],5,[[clavo,1]]]]);
+    expect(mapa.locales[0].coladeSalida[0].tiempo).toBe(0);
 })
