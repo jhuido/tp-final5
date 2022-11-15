@@ -27,37 +27,41 @@ function Mapa(locales,destinos,colaEsperas,centros){
     }
 
     this.localGenerePaquete=function(local,infoPaquetes){
+        var index=this.locales.findIndex(element=>element==local);
         if(infoPaquetes.length>5){
             throw new Error("Local puede producir hasta 5 paquetes");
         }
         local.generePaquete(infoPaquetes);
-        this.mapa[0]+=infoPaquetes.length;
+        this.mapa[index][0]+=infoPaquetes.length;
     }
 
     this.moverPaquetes=function(){
         var columnas=this.mapa.length;
-        for(i=columnas-1;i>=0;i--){
-            if(i==0){
-                var paquetes=this.locales[0].coladeSalida;
-                paquetes.forEach(paquete => {
-                    paquete.aumentarTiempo();
-                });
-                this.centros[0].agregarPaquetes(paquetes);
-                this.mapa[i+1][0]=this.mapa[i];
-                this.mapa[i]=0;
-            }else if(i==columnas-1 && this.mapa[i][0]>0){
-                var paquetes=this.centros[i-1].getPaquetes();
-                this.destinos[0].recibePaquetes(paquetes);
-                this.centros[i-1].quitarPaquetes(paquetes);
-                this.mapa[i][0]=0;
-            }else if(this.mapa[i][0]>0){
-                var paquetes=this.centros[i-1].getPaquetes();
-                this.centros[i].agregarPaquetes(paquetes);
-                this.centros[i-1].quitarPaquetes(paquetes);
-                this.mapa[i+1][0]+=this.mapa[i][0];
-                this.mapa[i][0]=0;
+        for(j=0;j<this.filas;j++){
+            for(i=columnas-1;i>=0;i--){
+                if(i==0){
+                    var paquetes=this.locales[j].coladeSalida;
+                    paquetes.forEach(paquete => {
+                        paquete.aumentarTiempo();
+                    });
+                    this.centros[0].agregarPaquetes(paquetes);
+                    this.mapa[j][i+1][0]=this.mapa[i];
+                    this.mapa[j][i]=0;
+                }else if(i==columnas-1 && this.mapa[j][i][0]>0){
+                    var paquetes=this.centros[i-1].getPaquetes();
+                    this.destinos[j].recibePaquetes(paquetes);
+                    this.centros[i-1].quitarPaquetes(paquetes);
+                    this.mapa[j][i][0]=0;
+                }else if(this.mapa[j][i][0]>0){
+                    var paquetes=this.centros[i-1].getPaquetes();
+                    this.centros[i].agregarPaquetes(paquetes);
+                    this.centros[i-1].quitarPaquetes(paquetes);
+                    this.mapa[j][i+1][0]+=this.mapa[j][i][0];
+                    this.mapa[j][i][0]=0;
+                }
             }
         }
+
     };
 }
 
