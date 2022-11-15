@@ -37,5 +37,5 @@ test("Crear Paquete con productos",()=>{
     var tornillo=new Producto("tornillo");
     var clavo=new Producto("clavo");
     mapa.localGenerePaquete(mapa.locales[0],[[mapa.destinos[0],4,[[clavo,3],[tornillo,5]]],[mapa.destinos[0],5,[[clavo,1]]]]);
-    expect(mapa.locales[0].coladeSalida[0].tiempo).toBe(0);
+    expect(mapa.locales[0].coladeSalida[0].productos[0][0].nombre).toBe("clavo");
 })
