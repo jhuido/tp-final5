@@ -47,6 +47,12 @@ function Mapa(locales,destinos,colaEsperas,centros){
                     this.centros[j-1].quitarPaquetes(paquetes);
                     this.mapa[i][j][0]=0;
                 }else if(j==0 && this.mapa[i][j]>0){
+                    if(this.mapa[i][j]>0 && this.mapa[i][j][0]<this.mapa[i][j+1][1]){
+                        this.centros[j].agregarPaquetes(this.locales[i].coladeSalida.pop());
+                        this.mapa[i][j+1][0]+=1;
+                        this.mapa[i][j]-=1;
+                    }
+                    /*
                     while(this.mapa[i][j]>0 && this.mapa[i][j][0]<=this.mapa[i][j][1]){
                         this.centros[j].agregarPaquetes(this.locales[i].coladeSalida.pop());
                         this.mapa[i][j+1][0]+=1;
@@ -65,7 +71,7 @@ function Mapa(locales,destinos,colaEsperas,centros){
                             this.mapa[i+1][j+1][0]+=1;
                             this.mapa[i][j]-=1;
                         }
-                    }
+                    }*/
 
                 }else if(j>0 && j<this.columnas-1 && this.mapa[i][j][0]>0){
                     while(this.mapa[i][j][0]>0 && this.mapa[i][j][0]<=this.mapa[i][j][1]){
