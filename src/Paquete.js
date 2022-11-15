@@ -1,8 +1,9 @@
 
 
-function Paquete(destino,urgencia){
+function Paquete(destino,urgencia,productos){
     this.tiempo=0;
     this.destino=destino;
+    this.productos=productos;
     this.urgencia=urgencia;
 
     this.aumentarTiempo=function(){
