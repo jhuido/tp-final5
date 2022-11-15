@@ -67,7 +67,7 @@ test("Mover paquetes",()=>{
     
 
 })
-/*
+
 test("Paquetes lleguen a destino",()=>{
     mapa.localGenerePaquete(mapa.locales[0],[[mapa.destinos[0],4],[mapa.destinos[0],5]]);
     mapa.moverPaquetes();
@@ -80,7 +80,7 @@ test("Paquetes lleguen a destino",()=>{
     expect(mapa.destinos[0].paquetes[0].tiempo).toBe(4);
 
 })
-*/
+
 test("Local genere hasta 5 paquetes",()=>{
     expect(()=>mapa.localGenerePaquete(mapa.locales[0],[[mapa.destinos[0],4],[mapa.destinos[0],2],[mapa.destinos[0],5],[mapa.destinos[0],7],[mapa.destinos[0],4],[mapa.destinos[0],3]])).toThrow("Local puede producir hasta 5 paquetes");
 
