@@ -14,11 +14,12 @@ function Mapa(locales,destinos,colaEsperas,centros){
     function asignar(colaEsperas){
         const mapa=[];
         for(i=0;i<this.filas;i++){
-            const linea=[];
+            var linea=[];
             linea[0]=0;
             colaEsperas[i].forEach(element => {
                 linea.push([0,element]);
             });
+            console.log(linea);
             mapa.push(linea);
         }
         return mapa;
