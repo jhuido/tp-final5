@@ -32,13 +32,13 @@ test("Crear mapa",()=>{
     expect(mapa.mapa[1][2][1]).toBe(3);
     expect(mapa.mapa[1][3][1]).toBe(5);
 })
-/*
+
 test("Paquete en cola de salida",()=>{
     mapa.localGenerePaquete(mapa.locales[0],[[mapa.destinos[0],4],[mapa.destinos[0],5]]);
-    expect(mapa.mapa[0]).toBe(2);
+    expect(mapa.mapa[0][0]).toBe(2);
     expect(mapa.locales[0].coladeSalida.length).toBe(2);
 })
-
+/*
 test("Mover paquetes",()=>{
     mapa.localGenerePaquete(mapa.locales[0],[[mapa.destinos[0],4],[mapa.destinos[0],5]]);
     mapa.moverPaquetes();
