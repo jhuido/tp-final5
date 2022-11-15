@@ -10,7 +10,6 @@ function Centro(nombre,procesa){
         }else{
             this.paquetesSinProcesar.push(paquete);
         }
-        paquete.aumentarTiempo();
     }
 
 }
