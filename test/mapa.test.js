@@ -79,7 +79,7 @@ test("Cantidad de columnas mayor o igual a filas",()=>{
     var locales2=[new Local("A"),new Local("B")];
     var destinos2=[new Destino(1),new Destino(2)];
     var centros1=[new Centro("Facturacion",4)];
-    expect(()=>new Mapa(locales2,destinos2,[1],centros1)).toThrow("Debe haber misma catidad de locales que de destino");
+    expect(()=>new Mapa(locales2,destinos2,[1],centros1)).toThrow("Columnas debe ser mayor o igual a cantidad de locales");
 
 })
 
