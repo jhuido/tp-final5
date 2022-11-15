@@ -23,9 +23,7 @@ test("Crear mapa",()=>{
 })
 
 test("Paquete en cola de salida",()=>{
-    console.log(mapa);
     mapa.localGenerePaquete(mapa.locales[0],[[mapa.destinos[0],2]]);
-    console.log(mapa);
     expect(mapa.mapa[0]).toBe(2);
     expect(mapa.locales[0].coladeSalida.length).toBe(2);
 })
@@ -40,7 +38,6 @@ test("Mover paquetes",()=>{
     expect(mapa.centros[0].paquetes[0].tiempo).toBe(1);
 
     mapa.moverPaquetes();
-    console.log(mapa);
     expect(mapa.mapa[0]).toBe(0);
     expect(mapa.mapa[1][0]).toBe(0);
     expect(mapa.mapa[2][0]).toBe(2);
