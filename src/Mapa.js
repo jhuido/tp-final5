@@ -7,7 +7,7 @@ function Mapa(locales,destinos,colaEsperas,centros){
 
     function asignar(colaEsperas){
         const mapa=[];
-        for(i=0;i<filas;i++){
+        for(i=0;i<this.locales.lenght;i++){
             const linea=[];
             linea[0]=0;
             colaEsperas.forEach(element => {
