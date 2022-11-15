@@ -42,7 +42,7 @@ function Mapa(locales,destinos,colaEsperas,centros){
         for(i=0;i<this.filas;i++){
             for(j=this.columnas-1;j>=0;j--){
                 console.log(this.columnas)
-                if(j=(this.columnas-1) && this.mapa[i][j][0]>0){
+                if(j==(this.columnas-1) && this.mapa[i][j][0]>0){
                     paquetes=this.centros[j-1].getPaquetes();
                     this.destinos[i].recibePaquetes(paquetes);
                     this.centros[j-1].quitarPaquetes(paquetes);
