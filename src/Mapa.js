@@ -2,7 +2,7 @@ function Mapa(locales,destinos,colaEsperas,centros){
     this.locales=locales;
     this.destinos=destinos;
     this.centros=centros;
-    this.filas=locales.lenght;
+    this.filas=locales.length;
     this.mapa=asignar(colaEsperas);
 
     function asignar(colaEsperas){
@@ -13,6 +13,7 @@ function Mapa(locales,destinos,colaEsperas,centros){
         });
         return linea;
         
+
     }
 
     this.localGenerePaquete=function(local,destinos){
@@ -25,7 +26,7 @@ function Mapa(locales,destinos,colaEsperas,centros){
     }
 
     this.moverPaquetes=function(){
-        var columnas=this.centros.length;
+        var columnas=this.mapa.length;
         console.log("COLUMNAS: "+columnas);
         for(i=columnas-2;i>=0;i--){
             if(i==0){
