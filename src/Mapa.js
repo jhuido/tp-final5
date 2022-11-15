@@ -65,7 +65,7 @@ function Mapa(locales,destinos,colaEsperas,centros){
                         }
                     } 
                     if(i<this.filas-1){ // si no esta en la ultima fila
-                        while(this.mapa[i][j]>0 && this.mapa[i][j+1][0]<this.mapa[i+1][j+1][1]){
+                        while(this.mapa[i][j]>0 && this.mapa[i+1][j+1][0]<this.mapa[i+1][j][1]){
                             paquete=this.locales[i].coladeSalida.pop();
                             paquete.aumentarTiempo();
                             this.centros[j].agregarPaquetes(paquete);
