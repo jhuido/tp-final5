@@ -87,7 +87,7 @@ test("Cantidad de columnas mayor o igual a filas",()=>{
 test("Mapa tiene más de una fila",()=>{
     var locales2=[new Local("A"),new Local("B")];
     var destinos2=[new Destino(1),new Destino(2)];
-    var centros2=(new Centro("Facturacion",3),new Centro("Calidad",5),new Centro("Distribucion",4));
+    var centros2=[new Centro("Facturacion",3),new Centro("Calidad",5),new Centro("Distribucion",4)];
     var mapa=new Mapa(locales2,destinos2,[[4,3,5],[3,7,5]],centros2);
     console.log(mapa);
     expect(mapa.mapa[0][1][1]).toBe(4);
