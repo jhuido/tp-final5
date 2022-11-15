@@ -4,11 +4,11 @@ function Centro(nombre,procesa){
     this.paquetesSinProcesar=[];
     this.paquetesProcesados=[]
 
-    this.agregarPaquetes=function(paquetes){
+    this.agregarPaquetes=function(paquete){
         if(this.paquetesProcesados.length<procesa){
-            this.paquetesProcesados.push(element);
+            this.paquetesProcesados.push(paquete);
         }else{
-            this.paquetesSinProcesar.push(element);
+            this.paquetesSinProcesar.push(paquete);
         }
     }
 
