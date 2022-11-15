@@ -22,7 +22,7 @@ function Centro(nombre,procesa){
     }
 
     this.getPaquetes=function(){
-        return this.paquetes;
+        return this.paquetesProcesados;
     }
 
     this.quitarPaquetes=function(paquetes){
