@@ -89,7 +89,7 @@ test("Mapa tiene más de una fila",()=>{
     var destinos2=[new Destino(1),new Destino(2)];
     var centros2=(new Centro("Facturacion",3),new Centro("Calidad",5),new Centro("Distribucion",4));
     var mapa=new Mapa(locales2,destinos2,[[4,3,5],[3,7,5]],centros2);
-    console.log(mapa.mapa);
+    console.log(mapa);
     expect(mapa.mapa[0][1][1]).toBe(4);
     expect(mapa.mapa[0][2][1]).toBe(3);
     expect(mapa.mapa[0][3][1]).toBe(5);
