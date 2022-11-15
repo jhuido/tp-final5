@@ -55,7 +55,7 @@ function Mapa(locales,destinos,colaEsperas,centros){
                         this.mapa[i][j]-=1;
                     }
                     if(i>1){ // si no esta en la primera fila
-                        while(this.mapa[i][j]>0 && this.mapa[i][j+1][0]<this.mapa[i-1][j+1][1]){
+                        while(this.mapa[i][j]>0 && this.mapa[i-1][j+1][0]<this.mapa[i-1][j+1][1]){
                             this.mapa[i-1][j+1][0]+=1;
                             this.mapa[i][j]-=1;
                         }
