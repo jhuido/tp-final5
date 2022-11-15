@@ -46,6 +46,7 @@ function Mapa(locales,destinos,colaEsperas,centros){
                     paquete.aumentarTiempo();
                     this.destinos[i].recibePaquetes(paquete);
                     this.mapa[i][j][0]=0;
+                    this.mapa[i][j]-=1;
                 }else if(j==0){ // si esta en la cola de salida de algun local
                     while(this.mapa[i][j]>0){
                         while(this.mapa[i][j+1][0]<this.mapa[i][j+1][1]){ // pasar a arriba diagonal
