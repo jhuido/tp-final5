@@ -37,8 +37,16 @@ function Mapa(locales,destinos,colaEsperas,centros){
     }
 
     this.moverPaquetes=function(){
-        var j,i;
+        var j=0,i=0;
         var paquetes;
+        if(this.mapa[i][j]>0){
+            while(this.mapa[i][j]<this.mapa[i][j+1][0]){
+                console.log(mapa.mapa[j]);
+                this.mapa[i][j+1][0]+=1;
+                this.mapa[i][j]-=1;
+            }
+        }
+        /*
         for(i=0;i<this.filas;i++){
             for(j=this.columnas-1;j>=0;j--){
                 if(j==(this.columnas-1) && this.mapa[i][j][0]>0){
@@ -71,7 +79,7 @@ function Mapa(locales,destinos,colaEsperas,centros){
                             this.mapa[i+1][j+1][0]+=1;
                             this.mapa[i][j]-=1;
                         }
-                    }*/
+                    }
 
                 }else if(j>0 && j<this.columnas-1 && this.mapa[i][j][0]>0){
                     while(this.mapa[i][j][0]>0 && this.mapa[i][j][0]<=this.mapa[i][j][1]){
@@ -102,34 +110,8 @@ function Mapa(locales,destinos,colaEsperas,centros){
                     this.mapa[i][j][0]=0;
                 }
             }
-        }
+        }*/
         
-        /*
-        for(j=0;j<this.filas;j++){
-            for(i=parseInt(this.columnas-1);i>=0;i--){
-                if(i==0){
-                    var paquetes=this.locales[j].coladeSalida;
-                    paquetes.forEach(paquete => {
-                        paquete.aumentarTiempo();
-                    });
-                    this.centros[0].agregarPaquetes(paquetes);
-                    this.mapa[j][i+1][0]=this.mapa[i];
-                    this.mapa[j][i]=0;
-                }else if(i==parseInt(this.columnas-1) && this.mapa[j][i][0]>0){
-                    var paquetes=this.centros[i-1].getPaquetes();
-                    this.destinos[j].recibePaquetes(paquetes);
-                    this.centros[i-1].quitarPaquetes(paquetes);
-                    this.mapa[j][i][0]=0;
-                }else if(this.mapa[j][i][0]>0){
-                    var paquetes=this.centros[i-1].getPaquetes();
-                    this.centros[i].agregarPaquetes(paquetes);
-                    this.centros[i-1].quitarPaquetes(paquetes);
-                    this.mapa[j][i+1][0]+=this.mapa[j][i][0];
-                    this.mapa[j][i][0]=0;
-                }
-            }
-        }
-        */
     };
 }
 
