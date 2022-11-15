@@ -5,7 +5,7 @@ function Mapa(locales,destinos,colaEsperas,centros){
     const filas=locales.lenght;
     this.mapa=asignar(colaEsperas);
 
-    function asignar(colaEsperas){
+    this.asignar=function(colaEsperas){
         const mapa=[filas];
         for(i=1;i<filas;i++){
             mapa[i]=new Array(this.centros.lenght+1);
