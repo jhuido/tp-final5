@@ -37,78 +37,63 @@ function Mapa(locales,destinos,colaEsperas,centros){
     }
 
     this.moverPaquetes=function(){
-        var j=0,i=0;
+        var j,i;
         var paquetes;
-        while(this.mapa[i][j]>0 && this.mapa[i][j+1][0]<this.mapa[i][j+1][1]){
-            console.log(this.mapa[i]);
-            this.mapa[i][j+1][0]+=1;
-            this.mapa[i][j]-=1;
-        }
-        /*
         for(i=0;i<this.filas;i++){
             for(j=this.columnas-1;j>=0;j--){
-                if(j==(this.columnas-1) && this.mapa[i][j][0]>0){
-                    paquetes=this.centros[j-1].getPaquetes();
-                    this.destinos[i].recibePaquetes(paquetes);
-                    this.centros[j-1].quitarPaquetes(paquetes);
+                if(j==(this.columnas-1) && this.mapa[i][j][0]>0){  //si esta en la ultima instancia
+                    this.destinos[i].recibePaquetes(this.centros[j-1].pop());
                     this.mapa[i][j][0]=0;
-                }else if(j==0 && this.mapa[i][j]>0){
-                    if(this.mapa[i][j]>0 && this.mapa[i][j][0]<this.mapa[i][j+1][1]){
+                }else if(j==0 && this.mapa[i][j]>0){ // si esta en la cola de salida de algun local
+                    if(this.mapa[i][j]>0 && this.mapa[i][j+1][0]<=this.mapa[i][j+1][1]){ // pasar al frente
                         this.centros[j].agregarPaquetes(this.locales[i].coladeSalida.pop());
                         this.mapa[i][j+1][0]+=1;
                         this.mapa[i][j]-=1;
                     }
-                    /*
-                    while(this.mapa[i][j]>0 && this.mapa[i][j][0]<=this.mapa[i][j][1]){
+                    
+                    while(this.mapa[i][j]>0 && this.mapa[i][j+1][0]<=this.mapa[i][j+1][1]){ // pasar a arriba diagonal
                         this.centros[j].agregarPaquetes(this.locales[i].coladeSalida.pop());
                         this.mapa[i][j+1][0]+=1;
                         this.mapa[i][j]-=1;
                     }
-                    if(i>1){
-                        while(this.mapa[i][j]>0 && this.mapa[i][j][0]<=this.mapa[i-1][j+1][1]){
+                    if(i>1){ // si no esta en la primera fila
+                        while(this.mapa[i][j]>0 && this.mapa[i][j+1][0]<=this.mapa[i-1][j+1][1]){
                             this.centros[j].agregarPaquetes(this.locales[i].coladeSalida.pop());
                             this.mapa[i-1][j+1][0]+=1;
                             this.mapa[i][j]-=1;
                         }
-                    }
-                    if(i<this.filas-1){
-                        while(this.mapa[i][j]>0 && this.mapa[i][j][0]<=this.mapa[i+1][j+1][1]){
+                    } 
+                    if(i<this.filas-1){ // si no esta en la ultima fila
+                        while(this.mapa[i][j]>0 && this.mapa[i][j+1][0]<=this.mapa[i+1][j+1][1]){
                             this.centros[j].agregarPaquetes(this.locales[i].coladeSalida.pop());
                             this.mapa[i+1][j+1][0]+=1;
                             this.mapa[i][j]-=1;
                         }
                     }
 
-                }else if(j>0 && j<this.columnas-1 && this.mapa[i][j][0]>0){
-                    while(this.mapa[i][j][0]>0 && this.mapa[i][j][0]<=this.mapa[i][j][1]){
-                        paquetes=this.centros[j-1].getPaquetes();
-                        this.centros[j].agregarPaquetes(paquetes);
-                        this.centros[j-1].quitarPaquetes(paquetes);
+                }else if(j>0 && j<this.columnas-1 && this.mapa[i][j][0]>0){ // si esta entre los centros
+                    while(this.mapa[i][j][0]>0 && this.mapa[i][j+1][0]<=this.mapa[i][j+1][1]){
+                        this.centros[j].agregarPaquetes(this.centros[j-1].paquetesProcesados.pop());
                         this.mapa[i][j+1][0]+=this.mapa[i][j][0];
                         this.mapa[i][j][0]=0;
                     }
-                    if(i>1){
-                        while(this.mapa[i][j]>0 && this.mapa[i][j][0]<=this.mapa[i-1][j+1][1]){
+                    if(i>1){ // si no esta en la primera fila
+                        while(this.mapa[i][j]>0 && this.mapa[i-1][j+1][0]<=this.mapa[i-1][j+1][1]){
                             this.centros[j].agregarPaquetes(this.locales[i].coladeSalida.pop());
                             this.mapa[i-1][j+1][0]+=1;
                             this.mapa[i][j][0]-=1;
                         }
                     }
-                    if(i<this.filas-1){
-                        while(this.mapa[i][j]>0 && this.mapa[i][j][0]<=this.mapa[i+1][j+1][1]){
+                    if(i<this.filas-1){ // si no esta en la ultima fila
+                        while(this.mapa[i][j]>0 && this.mapa[i+1][j+1][0]<=this.mapa[i+1][j+1][1]){
                             this.centros[j].agregarPaquetes(this.locales[i].coladeSalida.pop());
                             this.mapa[i+1][j+1][0]+=1;
                             this.mapa[i][j][0]-=1;
                         }
                     }
-                    paquetes=this.centros[j-1].getPaquetes();
-                    this.centros[j].agregarPaquetes(paquetes);
-                    this.centros[j-1].quitarPaquetes(paquetes);
-                    this.mapa[i][j+1][0]+=this.mapa[i][j][0];
-                    this.mapa[i][j][0]=0;
                 }
             }
-        }*/
+        }
         
     };
 }
