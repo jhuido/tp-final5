@@ -47,12 +47,48 @@ function Mapa(locales,destinos,colaEsperas,centros){
                     this.centros[j-1].quitarPaquetes(paquetes);
                     this.mapa[i][j][0]=0;
                 }else if(j==0 && this.mapa[i][j]>0){
-                    paquetes=this.locales[i].coladeSalida;
-                    this.centros[j].agregarPaquetes(paquetes);
-                    this.locales[i].quitarPaquetes(paquetes);
-                    this.mapa[i][j+1][0]+=this.mapa[i][j];
-                    this.mapa[i][j]=0;
+                    while(this.mapa[i][j]>0 && this.mapa[i][j][0]<this.mapa[i][j][1]){
+                        this.centros[j].agregarPaquetes(this.locales[i].coladeSalida.pop());
+                        this.mapa[i][j+1][0]+=1;
+                        this.mapa[i][j]-=1;
+                    }
+                    if(i>1){
+                        while(this.mapa[i][j]>0 && this.mapa[i][j][0]<this.mapa[i-1][j+1][1]){
+                            this.centros[j].agregarPaquetes(this.locales[i].coladeSalida.pop());
+                            this.mapa[i-1][j+1][0]+=1;
+                            this.mapa[i][j]-=1;
+                        }
+                    }
+                    if(i<this.filas-1){
+                        while(this.mapa[i][j]>0 && this.mapa[i][j][0]<this.mapa[i+1][j+1][1]){
+                            this.centros[j].agregarPaquetes(this.locales[i].coladeSalida.pop());
+                            this.mapa[i+1][j+1][0]+=1;
+                            this.mapa[i][j]-=1;
+                        }
+                    }
+
                 }else if(j>0 && j<this.columnas-1 && this.mapa[i][j][0]>0){
+                    while(this.mapa[i][j][0]>0 && this.mapa[i][j][0]<this.mapa[i][j][1]){
+                        paquetes=this.centros[j-1].getPaquetes();
+                        this.centros[j].agregarPaquetes(paquetes);
+                        this.centros[j-1].quitarPaquetes(paquetes);
+                        this.mapa[i][j+1][0]+=this.mapa[i][j][0];
+                        this.mapa[i][j][0]=0;
+                    }
+                    if(i>1){
+                        while(this.mapa[i][j]>0 && this.mapa[i][j][0]<this.mapa[i-1][j+1][1]){
+                            this.centros[j].agregarPaquetes(this.locales[i].coladeSalida.pop());
+                            this.mapa[i-1][j+1][0]+=1;
+                            this.mapa[i][j]-=1;
+                        }
+                    }
+                    if(i<this.filas-1){
+                        while(this.mapa[i][j]>0 && this.mapa[i][j][0]<this.mapa[i+1][j+1][1]){
+                            this.centros[j].agregarPaquetes(this.locales[i].coladeSalida.pop());
+                            this.mapa[i+1][j+1][0]+=1;
+                            this.mapa[i][j]-=1;
+                        }
+                    }
                     paquetes=this.centros[j-1].getPaquetes();
                     this.centros[j].agregarPaquetes(paquetes);
                     this.centros[j-1].quitarPaquetes(paquetes);
