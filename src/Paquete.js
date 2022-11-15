@@ -8,5 +8,14 @@ function Paquete(destino,urgencia){
     this.aumentarTiempo=function(){
         this.tiempo++;
     }
+
+    this.llegoATiempo=function(){
+        if(this.tiempo<=this.urgencia){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
 }
 module.exports=Paquete;

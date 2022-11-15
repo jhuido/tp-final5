@@ -3,7 +3,8 @@ const Local = require("../src/Local");
 const Centro = require("../src/Centro");
 const Mapa= require("../src/Mapa");
 
-test("Crear Paquete",()=>{
+var mapa;
+beforeEach(()=>{
     const local=new Local("A");
     const destino=new Destino(1);
     const facturacion=new Centro("Facturacion",3);
@@ -13,7 +14,20 @@ test("Crear Paquete",()=>{
     const locales=[local];
     const destinos=[destino];
     const colaEsperas=[3,4,5];
-    const mapa=new Mapa(locales,destinos,colaEsperas,centros);
+    mapa=new Mapa(locales,destinos,colaEsperas,centros);
+})
+
+test("Crear Paquete",()=>{
     mapa.localGenerePaquete(local,[[destino,4],[destino,5]]);
     expect(local.coladeSalida[0].tiempo).toBe(0);
+})
+
+test("Paquete llega a tiempo?",()=>{
+    mapa.localGenerePaquete(local,[[destino,4],[destino,5]]);
+    mapa.moverPaquetes();
+    mapa.moverPaquetes();
+    mapa.moverPaquetes();
+    mapa.moverPaquetes();
+    expect(mapa.destinos[0].paquetes[0].llegaATiempo()).toBe(true);
+    expect(mapa.destinos[0].paquetes[1].llegaATiempo()).toBe(true);
 })
