@@ -7,8 +7,10 @@ function Local(nombre){
 
     this.generePaquete=function(destinos){
         destinos.forEach(destino => {
-            const paquete=new Paquete(destino);
-            this.coladeSalida.push(paquete);
+            for(i=0;i<destino[1];i++){
+                const paquete=new Paquete(destino[0]);
+                this.coladeSalida.push(paquete);
+            }
         });
     }
 }
