@@ -30,3 +30,13 @@ test("Paquete en cola de salida",()=>{
     expect(mapa.locales[0].coladeSalida.length).toBe(2);
 })
 
+test("Mover paquetes",()=>{
+    console.log(mapa);
+    mapa.localGenerePaquete(mapa.locales[0],[[mapa.destinos[0],2]]);
+    mapa.moverPaquetes();
+    expect(mapa.mapa[0]).toBe(0);
+    expect(mapa.mapa[1][0]).toBe(2);
+    
+})
+
+

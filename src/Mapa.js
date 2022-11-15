@@ -23,6 +23,23 @@ function Mapa(locales,destinos,colaEsperas,centros){
         });
         this.mapa[0]+=num;
     }
+
+    this.moverPaquetes=function(){
+        var columnas=this.mapa.lenght;
+        for(i=columnas-2;i>=0;i--){
+            if(i==0){
+                this.centros[0].agregarPaquetes(this.locales[0].colaEsperas);
+                this.mapa[i+1][0]=this.mapa[i];
+                this.mapa[i]=0;
+            }
+            else if(this.mapa[i][0]>0){
+                var paquetes=this.centros[i-1].getPaquetes();
+                this.centros[i].agregarPaquetes(paquetes);
+                this.mapa[i+1][0]=this.mapa[i];
+                this.mapa[i][0]=0;
+            }
+        }
+    };
 }
 
 module.exports=Mapa;
