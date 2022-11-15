@@ -58,7 +58,7 @@ function Mapa(locales,destinos,colaEsperas,centros){
                         paquete=this.locales[i].coladeSalida.pop();
                         paquete.aumentarTiempo();
                         console.log(this.mapa[i][j][2]);
-                        console.log("Centro "+i+(this.mapa[i][j][2]).nombre);
+                        console.log("Centro "+i+(this.mapa[i][j][2][0]).nombre);
                         this.mapa[i][j][2].agregarPaquetes(paquete);
                         this.mapa[i][j]-=1;
                     }
