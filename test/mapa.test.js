@@ -30,6 +30,6 @@ test("Paquete en cola de salida",()=>{
     const destinos=[destino];
     const colaEsperas=[3,4,5];
     const mapa=new Mapa(locales,destinos,colaEsperas,centros);
-    mapa.LocalgenerePaquete(local,destinos);
+    mapa.localGenerePaquete(local,destinos);
     expect(mapa.mapa[0]).toBe(1);
 })
