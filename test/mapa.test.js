@@ -29,7 +29,6 @@ test("Paquete en cola de salida",()=>{
 })
 
 test("Mover paquetes",()=>{
-    console.log(mapa);
     mapa.localGenerePaquete(mapa.locales[0],[[mapa.destinos[0],2]]);
     mapa.moverPaquetes();
     expect(mapa.mapa[0]).toBe(0);
