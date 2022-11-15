@@ -11,7 +11,6 @@ function Local(nombre){
             this.coladeSalida.push(paquete);
         });
         mapa.agregarPaquete(this,destinos.lenght);
-        return paquete;
     }
 }
 
