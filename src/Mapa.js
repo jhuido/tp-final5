@@ -30,7 +30,11 @@ function Mapa(locales,destinos,colaEsperas,centros){
         console.log("COLUMNAS: "+columnas);
         for(i=columnas-2;i>=0;i--){
             if(i==0){
-                this.centros[0].agregarPaquetes(this.locales[0].colaEsperas);
+                var paquetes=this.locales[0].colaEsperas
+                paquetes.forEach(paquete => {
+                    paquete.aumentarTiempo();
+                });
+                this.centros[0].agregarPaquetes(paquetes);
                 this.mapa[i+1][0]=this.mapa[i];
                 this.mapa[i]=0;
             }
