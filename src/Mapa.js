@@ -56,10 +56,8 @@ function Mapa(locales,destinos,colaEsperas,centros){
                     while(this.mapa[i][j]>0 && this.mapa[i][j+1][0]<this.mapa[i][j+1][1]){ // pasar a arriba diagonal
                         this.mapa[i][j+1][0]+=1;
                         paquete=this.locales[i].coladeSalida.pop();
-                        paquete.aumentarTiempo();
-                        console.log(this.mapa[i][j+1]);
-                        console.log("Centro "+i+(this.mapa[i][j][2][0]).nombre);
-                        this.mapa[i][j][2].agregarPaquetes(paquete);
+                        paquete.aumentarTiempo(); 
+                        this.mapa[i][j+1][2].agregarPaquetes(paquete);
                         this.mapa[i][j]-=1;
                     }
                     if(i>1){ // si no esta en la primera fila
