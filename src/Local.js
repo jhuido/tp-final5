@@ -7,7 +7,7 @@ function Local(nombre){
 
     this.generePaquete=function(infoPaquetes){
         infoPaquetes.forEach(info => {
-            var paquete=new Paquete(info[0],info[1]);
+            var paquete=new Paquete(info[0],info[1],info[2]);
             this.coladeSalida.push(paquete);
         });
     }
