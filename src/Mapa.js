@@ -13,6 +13,7 @@ function Mapa(locales,destinos,colaEsperas,centros){
             colaEsperas.forEach(col => {
                 this.mapa[i].push([0,col]); //paquetes y capacidad
             });
+            console.log("\n fila "+i+"--> "+this.mapa[i]);
         }
     }
 }
