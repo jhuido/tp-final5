@@ -47,29 +47,22 @@ function Mapa(locales,destinos,colaEsperas,centros){
                     this.destinos[i].recibePaquetes(paquete);
                     this.mapa[i][j][0]=0;
                 }else if(j==0 && this.mapa[i][j]>0){ // si esta en la cola de salida de algun local
-                    
+                    paquete=this.locales[i].coladeSalida.pop();
+                    paquete.aumentarTiempo();
+                    this.centros[j].agregarPaquetes(paquete);
                     while(this.mapa[i][j]>0 && this.mapa[i][j+1][0]<this.mapa[i][j+1][1]){ // pasar a arriba diagonal
-                        paquete=this.locales[i].coladeSalida.pop();
-                        paquete.aumentarTiempo();
-                        this.centros[j].agregarPaquetes(paquete);
                         this.mapa[i][j+1][0]+=1;
                         this.mapa[i][j]-=1;
                     }
                     if(i>1){ // si no esta en la primera fila
                         while(this.mapa[i][j]>0 && this.mapa[i][j+1][0]<this.mapa[i-1][j+1][1]){
-                            paquete=this.locales[i].coladeSalida.pop();
-                            paquete.aumentarTiempo();
-                            this.centros[j].agregarPaquetes(paquete);
                             this.mapa[i-1][j+1][0]+=1;
                             this.mapa[i][j]-=1;
                         }
                     } 
                     if(i<this.filas-1){ // si no esta en la ultima fila
                         while(this.mapa[i][j]>0 && this.mapa[i+1][j+1][0]<this.mapa[i+1][j][1]){
-                            paquete=this.locales[i].coladeSalida.pop();
-                            paquete.aumentarTiempo();
-                            this.centros[j].agregarPaquetes(paquete);
-                            this.mapa[i+1][j][0]+=1;
+                            this.mapa[i+1][j+1][0]+=1;
                             this.mapa[i][j]-=1;
                         }
                     }
