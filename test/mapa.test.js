@@ -12,7 +12,7 @@ test("Crear mapa",()=>{
     const centros=[facturacion,calidad,distribucion];
     const locales=[local];
     const colaEsperas=[3,4,5];
-    const mapa=new Mapa(colaEsperas,locales.length);
+    const mapa=new Mapa(locales,destinos,colaEsperas,centros);
     expect(mapa[0].length).toBe(colaEsperas.length+1);
     expect(mapa[0][0][1]).toBe(3);
 })

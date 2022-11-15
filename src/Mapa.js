@@ -1,6 +1,7 @@
-function Mapa(colasEsperas,filas){
+function Mapa(locales,destinos,colaEsperas,centros);{
     this.locales=locales;
     this.destinos=destinos;
+    this.centros=centros;
     this.filas=locales.lenght;
     this.mapa=[];
     asignar(colaEsperas);
