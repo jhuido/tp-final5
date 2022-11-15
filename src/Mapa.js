@@ -42,7 +42,7 @@ function Mapa(locales,destinos,colaEsperas,centros){
         for(i=0;i<this.filas;i++){
             for(j=this.columnas-1;j>=0;j--){
                 if(j==(this.columnas-1) && this.mapa[i][j][0]>0){  //si esta en la ultima instancia
-                    this.destinos[i].recibePaquetes(this.centros[j-1].pop());
+                    this.destinos[i].recibePaquetes(this.centros[j-1].paquetesProcesados.pop());
                     this.mapa[i][j][0]=0;
                 }else if(j==0 && this.mapa[i][j]>0){ // si esta en la cola de salida de algun local
                     if(this.mapa[i][j]>0 && this.mapa[i][j+1][0]<=this.mapa[i][j+1][1]){ // pasar al frente
