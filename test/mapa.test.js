@@ -2,7 +2,7 @@ const Centro = require("../src/Centro");
 const Destino = require("../src/Destino");
 const Local = require("../src/Local");
 const Mapa = require("../src/Mapa");
-/*
+
 var mapa;
 beforeEach(()=>{
     const local=new Local("A");
@@ -11,17 +11,28 @@ beforeEach(()=>{
     const calidad=new Centro("Calidad",5);
     const distribucion=new Centro("Distribucion",6);
     const centros=[facturacion,calidad,distribucion];
-    const locales=[local];
-    const destinos=[destino];
-    const colaEsperas=[[3,4,5]];
+    const locales=[new Local("A"),new Local("B")];
+    const destinos=[new Destino(1),new Destino(2)];
+    const colaEsperas=[[3,4,5],[4,3,5]];
     mapa=new Mapa(locales,destinos,colaEsperas,centros);
 })
 
 test("Crear mapa",()=>{
     expect(mapa.locales.length).toBe(1);
-    expect(mapa.mapa[0]).toBe(0);
+    expect(mapa.mapa[0][0]).toBe(0);
+    expect(mapa.mapa[1][0]).toBe(0);
+    expect(mapa.mapa[0][1][0]).toBe(0);
+    expect(mapa.mapa[0][2][0]).toBe(0);
+    expect(mapa.mapa[0][3][0]).toBe(0);
+    //const colaEsperas=[[3,4,5],[4,3,5]];
+    expect(mapa.mapa[0][1][1]).toBe(3);
+    expect(mapa.mapa[0][2][1]).toBe(4);
+    expect(mapa.mapa[0][3][1]).toBe(5);
+    expect(mapa.mapa[1][1][1]).toBe(4);
+    expect(mapa.mapa[1][2][1]).toBe(3);
+    expect(mapa.mapa[1][3][1]).toBe(5);
 })
-
+/*
 test("Paquete en cola de salida",()=>{
     mapa.localGenerePaquete(mapa.locales[0],[[mapa.destinos[0],4],[mapa.destinos[0],5]]);
     expect(mapa.mapa[0]).toBe(2);
