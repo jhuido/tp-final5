@@ -39,7 +39,6 @@ function Mapa(locales,destinos,colaEsperas,centros){
     this.moverPaquetes=function(){
         for(j=0;j<this.filas;j++){
             for(i=parseInt(this.columnas-1);i>=0;i--){
-                console.log("\n >>>>>>>MAPA<<<<<<<<<<\n"+parseInt(this.columnas-1))
                 if(i==0){
                     var paquetes=this.locales[j].coladeSalida;
                     paquetes.forEach(paquete => {
@@ -50,7 +49,8 @@ function Mapa(locales,destinos,colaEsperas,centros){
                     this.mapa[j][i]=0;
                 }else if(i==parseInt(this.columnas-1) && this.mapa[j][i][0]>0){
                     var paquetes=this.centros[i-1].getPaquetes();
-                    this.destinos[j].recibePaquetes(paquetes);                 this.centros[i-1].quitarPaquetes(paquetes);
+                    this.destinos[j].recibePaquetes(paquetes);
+                    this.centros[i-1].quitarPaquetes(paquetes);
                     this.mapa[j][i][0]=0;
                 }else if(this.mapa[j][i][0]>0){
                     var paquetes=this.centros[i-1].getPaquetes();
