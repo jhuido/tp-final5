@@ -10,9 +10,9 @@ function Mapa(locales,destinos,colaEsperas,centros){
     this.centros=centros;
     this.filas=locales.length;
     this.columnas=parseInt((centros.length)+1);
-    this.mapa=asignar(colaEsperas);
+    this.mapa=asignar(colaEsperas,centros);
 
-    function asignar(colaEsperas){
+    function asignar(colaEsperas,centros){
         var mapa=[]
         var i;
         for(i=0;i<colaEsperas.length;i++){
@@ -20,7 +20,7 @@ function Mapa(locales,destinos,colaEsperas,centros){
             linea[0]=0;
             j=0;
             colaEsperas[i].forEach(element => {
-                linea.push([0,element,this.centros[j]]);
+                linea.push([0,element,centros[j]]);
                 j++;
             }); 
             mapa.push(linea);
