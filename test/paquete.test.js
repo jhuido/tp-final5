@@ -19,7 +19,7 @@ beforeEach(()=>{
 
 test("Crear Paquete",()=>{
     mapa.localGenerePaquete(mapa.locales[0],[[mapa.destinos[0],4],[mapa.destinos[0],5]]);
-    expect(local.coladeSalida[0].tiempo).toBe(0);
+    expect(mapa.locales[0].coladeSalida[0].tiempo).toBe(0);
 })
 
 test("Paquete llega a tiempo?",()=>{
