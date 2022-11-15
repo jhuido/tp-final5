@@ -9,6 +9,19 @@ function Centro(nombre,procesa){
             this.paquetes.push(paquete);
         });
     }
+
+    this.getPaquetes=function(){
+        return this.paquetes;
+    }
+
+    this.quitarPaquetes=function(paquetes){
+        paquetes.forEach(paquete => {
+            var index=this.paquetes.findIndex(element=>element==paquete)
+            if(index!=-1){
+                this.paquetes.splice(index,1);
+            }
+        });
+    }
 }
 
 module.exports=Centro;

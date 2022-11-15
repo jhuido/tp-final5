@@ -40,6 +40,7 @@ function Mapa(locales,destinos,colaEsperas,centros){
             else if(this.mapa[i][0]>0){
                 var paquetes=this.centros[i-1].getPaquetes();
                 this.centros[i].agregarPaquetes(paquetes);
+                this.centros[i-1].quitarPaquetes(paquetes);
                 this.mapa[i+1][0]=this.mapa[i];
                 this.mapa[i][0]=0;
             }
