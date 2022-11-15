@@ -38,9 +38,9 @@ test("Paquete en cola de salida",()=>{
     expect(mapa.mapa[0][0]).toBe(2);
     expect(mapa.locales[0].coladeSalida.length).toBe(2);
 })
-/*
+
 test("Mover paquetes",()=>{
-    mapa.localGenerePaquete(mapa.locales[0],[[mapa.destinos[0],4],[mapa.destinos[0],5]]);
+    mapa.localGenerePaquete(mapa.locales[0],[[mapa.destinos[0],6],[mapa.destinos[0],5]]);
     console.log(mapa.mapa);
     
     mapa.moverPaquetes();
@@ -51,7 +51,7 @@ test("Mover paquetes",()=>{
     expect(mapa.mapa[0][0]).toBe(0);
     expect(mapa.mapa[0][1][0]).toBe(2);
     expect(mapa.centros[0].paquetesProcesados[0].tiempo).toBe(1);
-    
+    /*
     mapa.moverPaquetes();
     expect(mapa.mapa[0][0]).toBe(0);
     expect(mapa.mapa[0][1][0]).toBe(0);
@@ -64,10 +64,10 @@ test("Mover paquetes",()=>{
     expect(mapa.mapa[0][2][0]).toBe(0);
     expect(mapa.mapa[0][3][0]).toBe(2);
     expect(mapa.centros[2].paquetesProcesados[0].tiempo).toBe(3);
-    
+    */
 
 })
-
+/*
 test("Paquetes lleguen a destino",()=>{
     mapa.localGenerePaquete(mapa.locales[0],[[mapa.destinos[0],4],[mapa.destinos[0],5]]);
     mapa.moverPaquetes();
