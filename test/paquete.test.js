@@ -28,6 +28,6 @@ test("Paquete llega a tiempo?",()=>{
     mapa.moverPaquetes();
     mapa.moverPaquetes();
     mapa.moverPaquetes();
-    expect(mapa.destinos[0].paquetes[0].llegaATiempo()).toBe(true);
-    expect(mapa.destinos[0].paquetes[1].llegaATiempo()).toBe(true);
+    expect(mapa.destinos[0].paquetes[0].llegoATiempo()).toBe(true);
+    expect(mapa.destinos[0].paquetes[1].llegoATiempo()).toBe(true);
 })
