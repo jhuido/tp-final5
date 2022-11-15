@@ -20,7 +20,7 @@ function Mapa(locales,destinos,colaEsperas,centros){
             linea[0]=0;
             j=0;
             colaEsperas[i].forEach(element => {
-                linea.push([0,element,centros[j]]);
+                linea.push([0,element,new Centro(centros[j].nombre,centros[j].procesa)]);
                 j++;
             }); 
             mapa.push(linea);
@@ -44,7 +44,7 @@ function Mapa(locales,destinos,colaEsperas,centros){
         for(i=0;i<this.filas;i++){
             for(j=this.columnas-1;j>=0;j--){
                 if(j==(this.columnas-1) && this.mapa[i][j][0]>0){  //si esta en la ultima instancia
-                    paquete=this.centros[j-1].paquetesProcesados.pop();
+                    paquete=this.mapa[i][j][2].paquetesProcesados.pop();
                     paquete.aumentarTiempo();
                     this.destinos[i].recibePaquetes(paquete);
                     this.mapa[i][j][0]=0;
