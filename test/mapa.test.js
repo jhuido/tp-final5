@@ -38,6 +38,7 @@ test("Mover paquetes",()=>{
     expect(mapa.mapa[1][0]).toBe(2);
     console.log(mapa.centros[0].paquetes);
     expect(mapa.centros[0].paquetes[0].tiempo).toBe(1);
+    console.log(mapa);
 
 })
 
