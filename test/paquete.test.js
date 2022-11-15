@@ -14,6 +14,6 @@ test("Crear Paquete",()=>{
     const destinos=[destino];
     const colaEsperas=[3,4,5];
     const mapa=new Mapa(locales,destinos,colaEsperas,centros);
-    mapa.localGenerePaquete(local,[[destino,2]]);
+    mapa.localGenerePaquete(local,[[destino,4],[destino,5]]);
     expect(local.coladeSalida[0].tiempo).toBe(0);
 })

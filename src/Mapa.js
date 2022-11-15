@@ -16,13 +16,9 @@ function Mapa(locales,destinos,colaEsperas,centros){
 
     }
 
-    this.localGenerePaquete=function(local,destinos){
-        local.generePaquete(destinos);
-        var num=0;
-        destinos.forEach(destino => {
-            num+=destino[1];
-        });
-        this.mapa[0]+=num;
+    this.localGenerePaquete=function(local,infoPaquetes){
+        local.generePaquete(infoPaquetes);
+        this.mapa[0]+=infoPaquetes.length;
     }
 
     this.moverPaquetes=function(){
