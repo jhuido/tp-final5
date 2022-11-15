@@ -17,7 +17,9 @@ function Mapa(locales,destinos,colaEsperas,centros){
         colaEsperas[0].forEach(element => {
             linea.push([0,element]);
         }); 
-        return linea; 
+        var mapa=[]
+        mapa.push(linea);
+        return mapa;
 
     }
 
