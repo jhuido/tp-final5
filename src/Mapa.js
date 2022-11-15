@@ -17,11 +17,8 @@ function Mapa(locales,destinos,colaEsperas,centros){
 
     this.localGenerePaquete=function(local,destinos){
         local.generePaquete(destinos);
-        console.log(destinos)
         var num=0;
-        destinos.forEach(destino => {
-            num+=destino[1];
-        });
+        num+=destinos[1];
         this.mapa[0]+=num;
     }
 }
