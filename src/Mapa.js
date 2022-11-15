@@ -7,14 +7,14 @@ function Mapa(locales,destinos,colaEsperas,centros){
 
     function asignar(colaEsperas){
         const mapa=[];
-        filas.forEach(fila => {
+        for(i=0;i<filas;i++){
             const linea=[];
             linea[0]=0;
             colaEsperas.forEach(element => {
                 linea.push([0,element]);
             });
-            mapa.push(linea);
-        });
+            mapa[i]=linea;
+        };
 
         return mapa;
         
