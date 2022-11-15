@@ -65,7 +65,7 @@ test("Mover paquetes",()=>{
 
 test("Paquetes lleguen a destino",()=>{
     mapa.localGenerePaquete(mapa.locales[0],[[mapa.destinos[0],4],[mapa.destinos[0],5],[mapa.destinos[1],4],[mapa.destinos[0],6]]);
-    expect(mapa.mapa[0][0][0]).toBe(4);
+    expect(mapa.mapa[0][0]).toBe(4);
     mapa.moverPaquetes();
     expect(mapa.mapa[0][1][0]).toBe(3);
     expect(mapa.mapa[1][1][0]).toBe(1);
