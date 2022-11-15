@@ -14,3 +14,5 @@ function Mapa(colasEsperas,filas){
         }
     }
 }
+
+module.exports=Mapa;

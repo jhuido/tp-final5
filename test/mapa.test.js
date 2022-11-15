@@ -1,6 +1,7 @@
 const Centro = require("../src/Centro");
 const Destino = require("../src/Destino");
-const Local = require("../src/Local")
+const Local = require("../src/Local");
+const Mapa = require("../src/Mapa");
 
 test("Crear mapa",()=>{
     const local=new Local("A");
