@@ -33,7 +33,6 @@ function Mapa(locales,destinos,colaEsperas,centros){
                 paquetes.forEach(paquete => {
                     paquete.aumentarTiempo();
                 });
-                console.log("PAquetes: "+paquetes);
                 this.centros[0].agregarPaquetes(paquetes);
                 this.mapa[i+1][0]=this.mapa[i];
                 this.mapa[i]=0;
