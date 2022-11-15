@@ -2,6 +2,9 @@ function Mapa(locales,destinos,colaEsperas,centros){
     if(locales.length!=destinos.length){
         throw new Error("Debe haber misma catidad de locales que de destino");
     }
+    if(locales.length>centros.length+1){ // el +1 es porque estamos contando la cola de salida del local
+        throw new Error("Columnas debe ser mayor o igual a cantidad de locales");
+    }
     this.locales=locales;
     this.destinos=destinos;
     this.centros=centros;
