@@ -39,12 +39,10 @@ function Mapa(locales,destinos,colaEsperas,centros){
     this.moverPaquetes=function(){
         var j=0,i=0;
         var paquetes;
-        if(this.mapa[i][j]>0){
-            while(this.mapa[i][j]<this.mapa[i][j+1][0]){
-                console.log(mapa.mapa[j]);
-                this.mapa[i][j+1][0]+=1;
-                this.mapa[i][j]-=1;
-            }
+        while(this.mapa[i][j]>0 &&this.mapa[i][j]<this.mapa[i][j+1][0]){
+            console.log(mapa.mapa[j]);
+            this.mapa[i][j+1][0]+=1;
+            this.mapa[i][j]-=1;
         }
         /*
         for(i=0;i<this.filas;i++){
