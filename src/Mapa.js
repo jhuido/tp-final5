@@ -13,15 +13,10 @@ function Mapa(locales,destinos,colaEsperas,centros){
     asignar(colaEsperas);
 
     function asignar(colaEsperas){
-        var linea;
-        for(i=0;i<this.filas;i++){
-            linea=[];
-            linea[0]=0;
-            colaEsperas[i].forEach(element => {
-                linea.push([0,element]);
-            });
-            this.mapa.push(linea);
-        }       
+        this.mapa[0]=0;
+        colaEsperas[0].forEach(element => {
+            this.mapa.push([0,element]);
+        });  
 
     }
 
