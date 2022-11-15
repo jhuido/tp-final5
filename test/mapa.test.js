@@ -23,13 +23,13 @@ test("Crear mapa",()=>{
 })
 
 test("Paquete en cola de salida",()=>{
-    mapa.localGenerePaquete(mapa.locales[0],[[destino,4],[destino,5]]);
+    mapa.localGenerePaquete(mapa.locales[0],[[mapa.destinos[0],4],[mapa.destinos[0],5]]);
     expect(mapa.mapa[0]).toBe(2);
     expect(mapa.locales[0].coladeSalida.length).toBe(2);
 })
 
 test("Mover paquetes",()=>{
-    mapa.localGenerePaquete(mapa.locales[0],[[destino,4],[destino,5]]);
+    mapa.localGenerePaquete(mapa.locales[0],[[mapa.destinos[0],4],[mapa.destinos[0],5]]);
     mapa.moverPaquetes();
     expect(mapa.mapa[0]).toBe(0);
     expect(mapa.mapa[1][0]).toBe(2);
@@ -51,7 +51,7 @@ test("Mover paquetes",()=>{
 })
 
 test("Paquetes lleguen a destino",()=>{
-    mapa.localGenerePaquete(mapa.locales[0],[[destino,4],[destino,5]]);
+    mapa.localGenerePaquete(mapa.locales[0],[[mapa.destinos[0],4],[mapa.destinos[0],5]]);
     mapa.moverPaquetes();
     mapa.moverPaquetes();
     mapa.moverPaquetes();
