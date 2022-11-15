@@ -79,7 +79,8 @@ test("Haya misma cantidad de locales que de destinos",()=>{
     const locales=[localA,localB];
     const destinos=[destino];
     const colaEsperas=[3,4,5];
-    expect(()=>new Mapa(locales,destinos,colaEsperas,centros).toThrow("Debe haber misma catidad de locales que de destino"));
+    var mapa1;
+    expect(()=>mapa1=new Mapa(locales,destinos,colaEsperas,centros).toThrow("Debe haber misma catidad de locales que de destino"));
 
 })
 
