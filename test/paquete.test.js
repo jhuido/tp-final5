@@ -18,12 +18,12 @@ beforeEach(()=>{
 })
 
 test("Crear Paquete",()=>{
-    mapa.localGenerePaquete(local,[[destino,4],[destino,5]]);
+    mapa.localGenerePaquete(mapa.locales[0],[[destino,4],[destino,5]]);
     expect(local.coladeSalida[0].tiempo).toBe(0);
 })
 
 test("Paquete llega a tiempo?",()=>{
-    mapa.localGenerePaquete(local,[[destino,4],[destino,5]]);
+    mapa.localGenerePaquete(mapa.locales[0],[[destino,4],[destino,5]]);
     mapa.moverPaquetes();
     mapa.moverPaquetes();
     mapa.moverPaquetes();
