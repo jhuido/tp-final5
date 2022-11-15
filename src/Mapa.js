@@ -1,4 +1,4 @@
-function Mapa(locales,destinos,colaEsperas,centros);{
+function Mapa(locales,destinos,colaEsperas,centros){
     this.locales=locales;
     this.destinos=destinos;
     this.centros=centros;
