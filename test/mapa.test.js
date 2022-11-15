@@ -71,7 +71,7 @@ test("Local genere hasta 5 paquetes",()=>{
 test("Haya misma cantidad de locales que de destinos",()=>{
     var locales2=[new Local("A"),new Local("B")];
     var destinos1=[new Destino(1)];
-    expect(()=>new Mapa(locales2,destinos1).toThrow("Debe haber misma catidad de locales que de destino"));
+    expect(()=>new Mapa(locales2,destinos1)).toThrow("Debe haber misma catidad de locales que de destino");
 
 })
 
