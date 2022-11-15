@@ -11,7 +11,7 @@ function Mapa(locales,destinos,colaEsperas,centros){
     this.destinos=destinos;
     this.centros=centros;
     this.filas=locales.length;
-    this.columnas=parseInt((centros.length)+1);
+    this.columnas=(centros.length);
     this.mapa=asignar(colaEsperas,centros);
 
     function asignar(colaEsperas,centros){
