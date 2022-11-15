@@ -4,7 +4,10 @@ function Centro(nombre,procesa){
     this.paquetes=[];
 
     this.agregarPaquetes=function(paquetes){
-        this.paquetes.push(paquetes);
+
+        paquetes.forEach(paquete => {
+            this.paquetes.push(paquete);
+        });
     }
 }
 
