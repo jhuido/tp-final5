@@ -17,6 +17,9 @@ function Mapa(locales,destinos,colaEsperas,centros){
     }
 
     this.localGenerePaquete=function(local,infoPaquetes){
+        if(infoPaquetes.length>5){
+            throw new Error("Local puede producir hasta 5 paquetes");
+        }
         local.generePaquete(infoPaquetes);
         this.mapa[0]+=infoPaquetes.length;
     }
