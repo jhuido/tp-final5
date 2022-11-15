@@ -16,5 +16,5 @@ test("Crear mapa",()=>{
     const mapa=new Mapa(locales,destinos,colaEsperas,centros);
     expect(locales.length).toBe(1);
     console.log(mapa);
-    expect(mapa.mapa[0][0]).toBe(0);
+    expect(mapa.mapa[0]).toBe(0);
 })
