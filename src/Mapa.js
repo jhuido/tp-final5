@@ -18,8 +18,10 @@ function Mapa(locales,destinos,colaEsperas,centros){
         for(i=0;i<colaEsperas.length;i++){
             var linea=[];
             linea[0]=0;
+            j=0;
             colaEsperas[i].forEach(element => {
-                linea.push([0,element]);
+                linea.push([0,element,this.centros[j]]);
+                j++;
             }); 
             mapa.push(linea);
         }
