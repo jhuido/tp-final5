@@ -52,7 +52,7 @@ function Mapa(locales,destinos,colaEsperas,centros){
                     this.locales[i].quitarPaquetes(paquetes);
                     this.mapa[i][j+1][0]+=this.mapa[i][j];
                     this.mapa[i][j]=0;
-                }else if(this.mapa[i][j][0]>0){
+                }else if(j>0 && j<this.columnas-1 && this.mapa[i][j][0]>0){
                     paquetes=this.centros[j-1].getPaquetes();
                     this.centros[j].agregarPaquetes(paquetes);
                     this.centros[j-1].quitarPaquetes(paquetes);
