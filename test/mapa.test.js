@@ -41,12 +41,8 @@ test("Paquete en cola de salida",()=>{
 
 test("Mover paquetes",()=>{
     mapa.localGenerePaquete(mapa.locales[0],[[mapa.destinos[0],6],[mapa.destinos[0],5]]);
-    console.log(mapa.mapa);
     
     mapa.moverPaquetes();
-    
-    console.log("\n>>>>>>MOVIENDO PAQUETE<<<<<<<<<\n")
-    console.log(mapa.mapa);
     
     expect(mapa.mapa[0][0]).toBe(0);
     expect(mapa.mapa[0][1][0]).toBe(2);
@@ -65,7 +61,6 @@ test("Mover paquetes",()=>{
     expect(mapa.mapa[0][3][0]).toBe(2);
     expect(mapa.centros[2].paquetesProcesados[0].tiempo).toBe(3);
     
-
 })
 
 test("Paquetes lleguen a destino",()=>{
@@ -114,17 +109,3 @@ test("Mapa tiene más de una fila",()=>{
     expect(mapa.mapa[1][2][1]).toBe(7);
     expect(mapa.mapa[1][3][1]).toBe(5);
 })
-/*
-test("Paqutes se mueva para abajo si la capcidad esta llena",()=>{
-    mapa.localGenerePaquete(mapa.locales[0],[[mapa.destinos[0],4],[mapa.destinos[1],4],[mapa.destinos[0],5]]);
-    mapa.moverPaquetes();
-    mapa.moverPaquetes();
-    mapa.moverPaquetes();
-    mapa.moverPaquetes();
-    expect(mapa.mapa[0][1][0]).toBe(0);
-    expect(mapa.mapa[0][2][0]).toBe(0);
-    expect(mapa.mapa[0][3][0]).toBe(0);
-    expect(mapa.destinos[0].paquetes[0].tiempo).toBe(4);
-
-})
-*/
