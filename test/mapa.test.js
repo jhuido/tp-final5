@@ -65,7 +65,7 @@ test("Paquetes lleguen a destino",()=>{
 
 test("Local genere hasta 5 paquetes",()=>{
     mapa.localGenerePaquete(mapa.locales[0],[[mapa.destinos[0],4],[mapa.destinos[0],5],[mapa.destinos[0],7],[mapa.destinos[0],4],[mapa.destinos[0],3]]);
-    expect(()=>mapa.localGenerePaquete(mapa.locales[0],[[mapa.destinos[0],4],[mapa.destinos[0],5],[mapa.destinos[0],7],[mapa.destinos[0],4],[mapa.destinos[0],3]])).toThrow("Local puede producir hasta 5 paquetes");
+    expect(mapa.localGenerePaquete(mapa.locales[0],[[mapa.destinos[0],4],[mapa.destinos[0],5],[mapa.destinos[0],7],[mapa.destinos[0],4],[mapa.destinos[0],3]])).toThrow("Local puede producir hasta 5 paquetes");
 
 })
 
