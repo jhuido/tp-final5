@@ -18,7 +18,7 @@ beforeEach(()=>{
 })
 
 test("Crear mapa",()=>{
-    expect(mapa.locales.length).toBe(1);
+    expect(mapa.locales.length).toBe(2);
     expect(mapa.mapa[0][0]).toBe(0);
     expect(mapa.mapa[1][0]).toBe(0);
     expect(mapa.mapa[0][1][0]).toBe(0);
