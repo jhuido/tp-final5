@@ -68,4 +68,19 @@ test("Local genere hasta 5 paquetes",()=>{
 
 })
 
+test("Haya misma cantidad de locales que de destinos",()=>{
+    const localA=new Local("A");
+    const localB=new Local("B");
+    const destino=new Destino(1);
+    const facturacion=new Centro("Facturacion",3);
+    const calidad=new Centro("Calidad",5);
+    const distribucion=new Centro("Distribucion",6);
+    const centros=[facturacion,calidad,distribucion];
+    const locales=[localA,localB];
+    const destinos=[destino];
+    const colaEsperas=[3,4,5];
+    expect(()=>new Mapa(locales,destinos,colaEsperas,centros).toThrow("Debe haber misma catidad de locales que de destino"));
+
+})
+
 
