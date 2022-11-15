@@ -9,7 +9,7 @@ function Mapa(locales,destinos,colaEsperas,centros){
         const mapa=[filas];
         for(i=1;i<filas;i++){
             mapa[i]=new Array(this.centros.lenght+1);
-            mapa[i][0]=[0];
+            mapa[i][0]=0;
             colaEsperas.forEach(col => {
                 mapa[i].push([0,col]); //paquetes y capacidad
             });
