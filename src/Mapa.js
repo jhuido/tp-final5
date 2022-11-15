@@ -9,14 +9,15 @@ function Mapa(locales,destinos,colaEsperas,centros){
     this.destinos=destinos;
     this.centros=centros;
     this.filas=locales.length;
-    this.mapa=[];
-    asignar(colaEsperas);
+    this.mapa=asignar(colaEsperas);
 
     function asignar(colaEsperas){
-        this.mapa[0]=0;
+        var linea=[];
+        linea[0]=0;
         colaEsperas[0].forEach(element => {
-            this.mapa.push([0,element]);
-        });  
+            linea.push([0,element]);
+        }); 
+        return linea; 
 
     }
 
