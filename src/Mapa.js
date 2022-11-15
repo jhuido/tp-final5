@@ -23,7 +23,7 @@ function Mapa(locales,destinos,colaEsperas,centros){
             j=0;
             colaEsperas[i].forEach(element => {
                 const factu = new Centro(centros[j].nombre,centros[j].procesa);
-                console.log("%s", factu[i].nombre);
+                console.log("%s", factu.nombre);
                 linea.push([0,element,new Centro(centros[j].nombre,centros[j].procesa)]);
                 j++;
             }); 
