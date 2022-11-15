@@ -15,7 +15,6 @@ test("Crear mapa",()=>{
     const colaEsperas=[3,4,5];
     const mapa=new Mapa(locales,destinos,colaEsperas,centros);
     expect(locales.length).toBe(1);
-    console.log(mapa);
     expect(mapa.mapa[0]).toBe(0);
 })
 
@@ -30,6 +29,8 @@ test("Paquete en cola de salida",()=>{
     const destinos=[destino];
     const colaEsperas=[3,4,5];
     const mapa=new Mapa(locales,destinos,colaEsperas,centros);
+    console.log(mapa);
     mapa.localGenerePaquete(local,destinos);
+    console.log(mapa);
     expect(mapa.mapa[0]).toBe(1);
 })
