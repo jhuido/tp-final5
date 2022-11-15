@@ -7,8 +7,9 @@ function Mapa(locales,destinos,colaEsperas,centros){
     asignar(colaEsperas);
 
     function asignar(colaEsperas){
-        for(i=0;i<this.filas;i++){
-            this.mapa[i]=[];
+        for(i=1;i<this.filas;i++){
+            this.mapa[i]=new Array(this.centros.lenght+1);
+            this.mapa[i][0]=[0];
             colaEsperas.forEach(col => {
                 this.mapa[i].push([0,col]); //paquetes y capacidad
             });
