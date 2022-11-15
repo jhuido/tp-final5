@@ -12,12 +12,16 @@ function Mapa(locales,destinos,colaEsperas,centros){
     this.mapa=asignar(colaEsperas);
 
     function asignar(colaEsperas){
-        const linea=[];
-        linea[0]=0;
-        colaEsperas.forEach(element => {
-            linea.push([0,element]);
-        });
-        return linea;
+        const mapa=[];
+        for(i=0;i<this.filas;i++){
+            const linea=[];
+            linea[0]=0;
+            colaEsperas[i].forEach(element => {
+                linea.push([0,element]);
+            });
+            mapa.push(linea);
+        }
+        return mapa;
         
 
     }
