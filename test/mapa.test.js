@@ -114,7 +114,7 @@ test("Mapa tiene más de una fila",()=>{
     expect(mapa.mapa[1][2][1]).toBe(7);
     expect(mapa.mapa[1][3][1]).toBe(5);
 })
-
+/*
 test("Paqutes se mueva para abajo si la capcidad esta llena",()=>{
     mapa.localGenerePaquete(mapa.locales[0],[[mapa.destinos[0],4],[mapa.destinos[1],4],[mapa.destinos[0],5]]);
     mapa.moverPaquetes();
@@ -127,3 +127,4 @@ test("Paqutes se mueva para abajo si la capcidad esta llena",()=>{
     expect(mapa.destinos[0].paquetes[0].tiempo).toBe(4);
 
 })
+*/
