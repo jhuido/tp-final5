@@ -16,6 +16,7 @@ function Centro(nombre,procesa){
 
     this.quitarPaquetes=function(paquetes){
         paquetes.forEach(paquete => {
+            paquete.aumentarTiempo();
             var index=this.paquetes.findIndex(element=>element==paquete)
             if(index!=-1){
                 this.paquetes.splice(index,1);
