@@ -45,7 +45,8 @@ test("Mover paquetes",()=>{
     
     mapa.moverPaquetes();
     
-    console.log("\n>>>>>>MOVIENDO PAQUETE<<<<<<<<<\n"+mapa.mapa);
+    console.log("\n>>>>>>MOVIENDO PAQUETE<<<<<<<<<\n")
+    console.log(mapa.mapa);
     /*
     expect(mapa.mapa[0][0]).toBe(0);
     expect(mapa.mapa[0][1][0]).toBe(2);
