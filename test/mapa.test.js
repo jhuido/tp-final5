@@ -13,7 +13,7 @@ beforeEach(()=>{
     const centros=[facturacion,calidad,distribucion];
     const locales=[local];
     const destinos=[destino];
-    const colaEsperas=[3,4,5];
+    const colaEsperas=[[3,4,5]];
     mapa=new Mapa(locales,destinos,colaEsperas,centros);
 })
 
