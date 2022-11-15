@@ -40,7 +40,8 @@ function Mapa(locales,destinos,colaEsperas,centros){
         var j,i;
         var paquetes;
         for(i=0;i<this.filas;i++){
-            for(j=(this.columnas-1);j>=0;j--){
+            for(j=this.columnas-1;j>=0;j--){
+                console.log(this.columnas)
                 if(j=(this.columnas-1) && this.mapa[i][j][0]>0){
                     paquetes=this.centros[j-1].getPaquetes();
                     this.destinos[i].recibePaquetes(paquetes);
@@ -61,6 +62,7 @@ function Mapa(locales,destinos,colaEsperas,centros){
                 }
             }
         }
+        
         /*
         for(j=0;j<this.filas;j++){
             for(i=parseInt(this.columnas-1);i>=0;i--){
