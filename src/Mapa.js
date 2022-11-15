@@ -1,5 +1,7 @@
 function Mapa(locales,destinos,colaEsperas,centros){
-
+    if(locales.legth!=destinos.length){
+        throw new Error("Debe haber misma catidad de locales que de destino");
+    }
     this.locales=locales;
     this.destinos=destinos;
     this.centros=centros;
