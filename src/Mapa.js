@@ -1,3 +1,5 @@
+const Centro=require("../src/Centro");
+
 function Mapa(locales,destinos,colaEsperas,centros){
     if(locales.length!=destinos.length){
         throw new Error("Debe haber misma catidad de locales que de destino");
@@ -54,7 +56,7 @@ function Mapa(locales,destinos,colaEsperas,centros){
                         this.mapa[i][j+1][0]+=1;
                         paquete=this.locales[i].coladeSalida.pop();
                         paquete.aumentarTiempo();
-                        this.centros[j].agregarPaquetes(paquete);
+                        this.mapa[i][j][2].agregarPaquetes(paquete);
                         this.mapa[i][j]-=1;
                     }
                     if(i>1){ // si no esta en la primera fila
@@ -62,7 +64,7 @@ function Mapa(locales,destinos,colaEsperas,centros){
                             this.mapa[i-1][j+1][0]+=1;
                             paquete=this.locales[i].coladeSalida.pop();
                             paquete.aumentarTiempo();
-                            this.centros[j].agregarPaquetes(paquete);
+                            this.mapa[i][j][2].agregarPaquetes(paquete);
                             this.mapa[i][j]-=1;
                         }
                     } 
@@ -71,7 +73,7 @@ function Mapa(locales,destinos,colaEsperas,centros){
                             this.mapa[i+1][j+1][0]+=1;
                             paquete=this.locales[i].coladeSalida.pop();
                             paquete.aumentarTiempo();
-                            this.centros[j].agregarPaquetes(paquete);
+                            this.mapa[i][j][2].agregarPaquetes(paquete);
                             this.mapa[i][j]-=1;
                         }
                     }
@@ -79,7 +81,7 @@ function Mapa(locales,destinos,colaEsperas,centros){
                     while(this.mapa[i][j][0]>0 && this.mapa[i][j+1][0]<this.mapa[i][j+1][1]){
                         paquete=this.centros[j-1].paquetesProcesados.pop();
                         paquete.aumentarTiempo();
-                        this.centros[j].agregarPaquetes(paquete);
+                        this.mapa[i][j][2].agregarPaquetes(paquete);
                         this.mapa[i][j+1][0]+=this.mapa[i][j][0];
                         this.mapa[i][j][0]=0;
                     }
