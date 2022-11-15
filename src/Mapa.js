@@ -9,6 +9,7 @@ function Mapa(locales,destinos,colaEsperas,centros){
     this.destinos=destinos;
     this.centros=centros;
     this.filas=locales.length;
+    this.columnas=centros.length+1;
     this.mapa=asignar(colaEsperas);
 
     function asignar(colaEsperas){
@@ -36,9 +37,8 @@ function Mapa(locales,destinos,colaEsperas,centros){
     }
 
     this.moverPaquetes=function(){
-        var columnas=this.mapa.length;
         for(j=0;j<this.filas;j++){
-            for(i=columnas-1;i>=0;i--){
+            for(i=this.columnas-1;i>=0;i--){
                 if(i==0){
                     var paquetes=this.locales[j].coladeSalida;
                     paquetes.forEach(paquete => {
