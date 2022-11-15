@@ -74,7 +74,7 @@ function Mapa(locales,destinos,colaEsperas,centros){
                             this.mapa[i+1][j+1][0]+=1;
                             paquete=this.locales[i].coladeSalida.pop();
                             paquete.aumentarTiempo();
-                            this.mapa[i][j][2].agregarPaquetes(paquete);
+                            this.mapa[i][j+1][2].agregarPaquetes(paquete);
                             this.mapa[i][j]-=1;
                         }
                     }
