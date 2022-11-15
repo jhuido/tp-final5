@@ -100,7 +100,7 @@ test("Cantidad de columnas mayor o igual a filas",()=>{
     expect(()=>new Mapa(locales2,destinos2,[1],centros1)).toThrow("Columnas debe ser mayor o igual a cantidad de locales");
 
 })
-*/
+
 
 test("Mapa tiene más de una fila",()=>{
     var locales2=[new Local("A"),new Local("B")];
