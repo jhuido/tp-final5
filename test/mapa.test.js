@@ -50,7 +50,7 @@ test("Mover paquetes",()=>{
     
     expect(mapa.mapa[0][0]).toBe(0);
     expect(mapa.mapa[0][1][0]).toBe(2);
-    expect(mapa.centros[0].paquetes[0].tiempo).toBe(1);
+    expect(mapa.centros[0].paquetesProcesados[0].tiempo).toBe(1);
     
     mapa.moverPaquetes();
     expect(mapa.mapa[0][0]).toBe(0);
