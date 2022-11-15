@@ -14,6 +14,10 @@ function Mapa(locales,destinos,colaEsperas,centros){
         return linea;
         
     }
+
+    this.agregarPaquete=function(local,cantidad){
+        this.mapa[0][0]+=cantidad;
+    }
 }
 
 module.exports=Mapa;
