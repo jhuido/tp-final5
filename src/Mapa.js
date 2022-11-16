@@ -100,12 +100,21 @@ function Mapa(locales,destinos,colaEsperas,centros){
                         if(index<i){ // si el destino esta arriba de donde esta ubicado... avanza a la fiagonal arriba
                             this.mapa[i-1][j+1][2].agregarPaquetes(paquete);
                             this.mapa[i-1][j+1][0]+=1;
+                            if(this.mapa[i-1][j+1][0]>=this.mapa[i-1][j+1][1]){
+                                index++;
+                            }
                         }else if(index==i){ // si el destino esta en la misma linea.. avanza a la derecha
                             this.mapa[i][j+1][2].agregarPaquetes(paquete);
                             this.mapa[i][j+1][0]+=1;
+                            if(this.mapa[i][j+1][0]>=this.mapa[i][j+1][1]){
+                                index++;
+                            }
                         }else if(index>i){ // si el destino esta abajo de donde esta ubicado.. avanza a la diagonal abajo
                             this.mapa[i+1][j][2].agregarPaquetes(paquete);
                             this.mapa[i+1][j][0]+=1;
+                            if(this.mapa[i+1][j][0]>=this.mapa[i+1][j][1]){
+                                index--;
+                            }
                         }
                     }
                     /*
