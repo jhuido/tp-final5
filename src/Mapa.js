@@ -100,6 +100,7 @@ function Mapa(locales,destinos,colaEsperas,centros){
                         if(index>i && this.mapa[i+1][j+1][0]<this.mapa[i+1][j+1][1]){
                             this.mapa[i+1][j+1][2].agregarPaquetes(paquete);
                             this.mapa[i+1][j+1][0]+=1;
+                            console.log(i+1);
                             console.log(this.mapa[i+1][j+1][2]);
                             console.log( paquete);
                         }else if(index<i){
