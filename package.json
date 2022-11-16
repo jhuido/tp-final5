@@ -1,15 +1,26 @@
 {
   "name": "tp-final5",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "testpush":"git add . && git commit -m 'TDDiteration' && git push && jest"
+    "test": "jest",
+    "testpush": "git add . && git commit -m 'TDDiteration' && git push && jest"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "jest": "^29.3.1"
-  }
+  },
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jhuido/tp-final5.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jhuido/tp-final5/issues"
+  },
+  "homepage": "https://github.com/jhuido/tp-final5#readme",
+  "description": ""
 }
