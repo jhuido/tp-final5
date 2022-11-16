@@ -116,3 +116,8 @@ test("Mapa tiene más de una fila",()=>{
     expect(mapa.mapa[1][2][1]).toBe(7);
     expect(mapa.mapa[1][3][1]).toBe(5);
 })
+
+
+test("Nombre del centro del primer local"){
+    expect(mapa.mapa[0][0][2].nombre).toBe("Facturacion");
+}
