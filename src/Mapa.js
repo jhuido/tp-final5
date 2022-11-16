@@ -97,7 +97,7 @@ function Mapa(locales,destinos,colaEsperas,centros){
                         paquete.aumentarTiempo(); 
                         index=this.destinos.findIndex(element=>element==paquete.destino);
                         this.mapa[i][j][0]-=1;
-                        if(index>i && this.mapa[i+1][j+1][0]<this.mapa[i+1][j+1][1]){
+                        if(index>i){
                             this.mapa[i+1][j+1][2].agregarPaquetes(paquete);
                             this.mapa[i+1][j+1][0]+=1;
                         }if(index<i){
