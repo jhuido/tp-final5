@@ -34,7 +34,7 @@ test("Crear mapa",()=>{
 })
 
 test("Paquete en cola de salida",()=>{
-    mapa.localGenerePaquete(mapa.locales[0],[[mapa.destinos[0],4],[mapa.destinos[0],5]]);
+    mapa.localGenerePaquete(mapa.locales[0],[[mapa.destinos[0],4],[mapa.destinos[1],5]]);
     expect(mapa.mapa[0][0]).toBe(2);
     expect(mapa.locales[0].coladeSalida.length).toBe(2);
 })
