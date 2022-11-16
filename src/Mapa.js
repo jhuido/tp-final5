@@ -44,6 +44,7 @@ function Mapa(locales,destinos,colaEsperas,centros){
     this.moverPaquetes=function(){
         var j,i;
         var paquete;
+        var index;
         for(i=0;i<this.filas;i++){
             for(j=this.columnas-1;j>=0;j--){
                 if(j==(this.columnas-1) && this.mapa[i][j][0]>0){  //si esta en la ultima instancia
@@ -91,9 +92,25 @@ function Mapa(locales,destinos,colaEsperas,centros){
                         }
                     }
                 }else if(j>=1 && j<this.columnas-1 && this.mapa[i][j][0]>0){ // si esta entre los centros
+                    while(this.mapa[i][j][0]>0){
+                        paquete=this.mapa[i][j][2].paquetesProcesados.pop();
+                        paquete.aumentarTiempo(); 
+                        index=this.destinos.findIndex(element=>element==paquete.destino);
+                        this.mapa[i][j][0]-=1;
+                        if(index>i && this.mapa[i-1][j+1][0]<this.mapa[i-1][j+1][1]){
+                            this.mapa[i+1][j+1][2].agregarPaquetes(paquete);
+                            this.mapa[i+1][j+1][0]+=1;
+                        }else if(index<i){
+                            this.mapa[i-1][j+1][2].agregarPaquetes(paquete);
+                            this.mapa[i-1][j+1][0]+=1;
+                        }else if(index==i){
+                            this.mapa[i][j+1][2].agregarPaquetes(paquete);
+                            this.mapa[i][j+1][0]+=1;
+                        }
+                    }
+                    /*
                     while(this.mapa[i][j][0]>0 && this.mapa[i][j+1][0]<this.mapa[i][j+1][1]){
-                        //console.log("HOLAAA");
-                        //console.log(this.mapa[i][j][2]);
+
                         paquete=this.mapa[i][j][2].paquetesProcesados.pop();
                         paquete.aumentarTiempo(); 
                         this.mapa[i][j+1][2].agregarPaquetes(paquete);
@@ -123,7 +140,7 @@ function Mapa(locales,destinos,colaEsperas,centros){
                             this.mapa[i+1][j+1][0]+=1;
                             this.mapa[i][j][0]-=1;
                         }
-                    }
+                    }*/
                 }
             }
         }
