@@ -54,7 +54,7 @@ function Mapa(locales,destinos,colaEsperas,centros){
                     while(paquete!=null){
                         paquete.aumentarTiempo();
                         //console.log(paquete);
-                        console.log(destinos[0]);
+                        //console.log(destinos[0]);
                         this.destinos[i].recibePaquetes(paquete);
                         this.mapa[i][j+1][2].agregarPaquetes(paquete);
                         this.mapa[i][j+1][0]+=1;
@@ -103,10 +103,10 @@ function Mapa(locales,destinos,colaEsperas,centros){
                             console.log("indiceeeee"+index);
                             console.log(this.mapa[i+1][j+1][2]);
                             console.log( paquete);
-                        }else if(index<i){
+                        }if(index<i){
                             this.mapa[i-1][j+1][2].agregarPaquetes(paquete);
                             this.mapa[i-1][j+1][0]+=1;
-                        }else if(index==i){
+                        }if(index==i){
                             this.mapa[i][j+1][2].agregarPaquetes(paquete);
                             this.mapa[i][j+1][0]+=1;
                         }
