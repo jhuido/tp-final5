@@ -10,6 +10,7 @@ function Centro(nombre,procesa){
             this.paquetesProcesados.sort(((a, b) => a.urgencia - b.urgencia));
         }else{
             this.paquetesSinProcesar.push(paquete);
+            this.paquetesSinProcesados.sort(((a, b) => a.urgencia - b.urgencia));
         }
     }
 
