@@ -7,6 +7,7 @@ function Centro(nombre,procesa){
     this.agregarPaquetes=function(paquete){
         if(this.paquetesProcesados.length<procesa){
             this.paquetesProcesados.push(paquete);
+            this.paquetesProcesados.sort(paquete=>paquete.urgencia);
         }else{
             this.paquetesSinProcesar.push(paquete);
         }
