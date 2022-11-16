@@ -47,7 +47,7 @@ test("Mover paquetes",()=>{
     expect(mapa.mapa[0][0]).toBe(0);
     expect(mapa.mapa[0][1][0]).toBe(2);
     expect(mapa.mapa[0][1][2].paquetesProcesados[0].tiempo).toBe(1);
-
+/*
     mapa.moverPaquetes();
     console.log(mapa.mapa);
     expect(mapa.mapa[0][0]).toBe(0);
@@ -64,7 +64,7 @@ test("Mover paquetes",()=>{
     expect(mapa.mapa[0][3][2].paquetesProcesados[0].tiempo).toBe(3);
     //jose aca agrege un test para saber q se agregaron al array destino 0
     expect(mapa.mapa.destinos[0].length).toBe(2);
-    
+    */
 })
 
 // test("Paquetes lleguen a destino",()=>{
