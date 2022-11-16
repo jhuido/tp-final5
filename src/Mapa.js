@@ -81,7 +81,7 @@ function Mapa(locales,destinos,colaEsperas,centros){
                 }else if(j>1 && j<this.columnas-1 && this.mapa[i][j][0]>0){ // si esta entre los centros
                     while(this.mapa[i][j][0]>0 && this.mapa[i][j+1][0]<this.mapa[i][j+1][1]){
                         //console.log(this.mapa[i][j]);
-                        paquete=this.mapa[i][j][2].coladeSalida.pop();
+                        paquete=this.mapa[i][j][2].paquetesProcesados.pop();
                         paquete.aumentarTiempo(); 
                         this.mapa[i][j+1][2].agregarPaquetes(paquete);
                         ///
@@ -94,15 +94,19 @@ function Mapa(locales,destinos,colaEsperas,centros){
                     if(i>1){ // si no esta en la primera fila
                         while(this.mapa[i][j]>0 && this.mapa[i-1][j+1][0]<this.mapa[i-1][j+1][1]){
                             paquete=this.mapa[i][j][2].paquetesProcesados.pop();
-                            paquete.aumentarTiempo();
-                            this.mapa[i-1][j+1][2].agregarPaquetes(paquete);
+                            paquete.aumentarTiempo(); 
+                            this.mapa[i][j+1][2].agregarPaquetes(paquete);
+                            //
+                            // paquete=this.mapa[i][j][2].paquetesProcesados.pop();
+                            // paquete.aumentarTiempo();
+                            // this.mapa[i-1][j+1][2].agregarPaquetes(paquete);
                             this.mapa[i-1][j+1][0]+=1;
                             this.mapa[i][j][0]-=1;
                         }
                     }
                     if(i<this.filas-1){ // si no esta en la ultima fila
                         while(this.mapa[i][j]>0 && this.mapa[i+1][j+1][0]<this.mapa[i+1][j+1][1]){
-                            paquete=this.mapa[i][j][2].coladeSalida.pop();
+                            paquete=this.mapa[i][j][2].paquetesProcesados.pop();
                             paquete.aumentarTiempo();
                             this.mapa[i+1][j+1][2].agregarPaquetes(paquete);
                             this.mapa[i+1][j+1][0]+=1;
