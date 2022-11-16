@@ -100,7 +100,7 @@ function Mapa(locales,destinos,colaEsperas,centros){
 
                     }
                     if(i>1){ // si no esta en la primera fila
-                        while(this.mapa[i][j]>0 && this.mapa[i-1][j+1][0]<this.mapa[i-1][j+1][1]){
+                        while(this.mapa[i][j][0]>0 && this.mapa[i-1][j+1][0]<this.mapa[i-1][j+1][1]){
                             paquete=this.mapa[i][j][2].paquetesProcesados.pop();
                             paquete.aumentarTiempo(); 
                             this.mapa[i][j+1][2].agregarPaquetes(paquete);
@@ -113,7 +113,7 @@ function Mapa(locales,destinos,colaEsperas,centros){
                         }
                     }
                     if(i<this.filas-1){ // si no esta en la ultima fila
-                        while(this.mapa[i][j]>0 && this.mapa[i+1][j+1][0]<this.mapa[i+1][j+1][1]){
+                        while(this.mapa[i][j][0]>0 && this.mapa[i+1][j+1][0]<this.mapa[i+1][j+1][1]){
                             paquete=this.mapa[i][j][2].paquetesProcesados.pop();
                             paquete.aumentarTiempo();
                             this.mapa[i+1][j+1][2].agregarPaquetes(paquete);
