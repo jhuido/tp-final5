@@ -39,17 +39,17 @@ test("Paquete en cola de salida",()=>{
     expect(mapa.locales[0].coladeSalida.length).toBe(2);
 })
 
-test("Mover paquetes",()=>{
+test("Mover paquetes de local 1 a distinto",()=>{
     mapa.localGenerePaquete(mapa.locales[1],[[mapa.destinos[0],6],[mapa.destinos[1],5]]);
-    console.log(mapa.mapa);
+    //console.log(mapa.mapa);
     mapa.moverPaquetes();
-    console.log(mapa.mapa);
+    //console.log(mapa.mapa);
     expect(mapa.mapa[0][0]).toBe(0);
     expect(mapa.mapa[1][1][0]).toBe(2);
     expect(mapa.mapa[1][1][2].paquetesProcesados[0].tiempo).toBe(1);
 
     mapa.moverPaquetes();
-    console.log(mapa.mapa);
+    //console.log(mapa.mapa);
     expect(mapa.mapa[0][0]).toBe(0);
     expect(mapa.mapa[0][1][0]).toBe(0);
     expect(mapa.mapa[0][2][0]).toBe(1);
@@ -57,7 +57,7 @@ test("Mover paquetes",()=>{
     expect(mapa.mapa[0][2][2].paquetesProcesados[0].tiempo).toBe(2);
     //console.log("EL ULTIMOOO");
     mapa.moverPaquetes();
-    console.log(mapa.mapa);
+    //console.log(mapa.mapa);
     expect(mapa.mapa[0][0]).toBe(0);
     expect(mapa.mapa[0][1][0]).toBe(0);
     expect(mapa.mapa[0][2][0]).toBe(0);
@@ -65,7 +65,38 @@ test("Mover paquetes",()=>{
     expect(mapa.mapa[1][3][0]).toBe(1);
     expect(mapa.mapa[0][3][2].paquetesProcesados[0].tiempo).toBe(3);
     //jose aca agrege un test para saber q se agregaron al array destino 0
-    console.log(mapa.destinos[0].paquetes);
+    //console.log(mapa.destinos[0].paquetes);
+    expect((mapa.destinos[0].paquetes).length).toBe(1);
+    
+})
+
+test("Mover paquetes de local 0 a distintos",()=>{
+    mapa.localGenerePaquete(mapa.locales[0],[[mapa.destinos[0],6],[mapa.destinos[1],5]]);
+    //console.log(mapa.mapa);
+    mapa.moverPaquetes();
+    //console.log(mapa.mapa);
+    expect(mapa.mapa[0][0]).toBe(0);
+    expect(mapa.mapa[1][1][0]).toBe(2);
+    expect(mapa.mapa[1][1][2].paquetesProcesados[0].tiempo).toBe(1);
+
+    mapa.moverPaquetes();
+    //console.log(mapa.mapa);
+    expect(mapa.mapa[0][0]).toBe(0);
+    expect(mapa.mapa[0][1][0]).toBe(0);
+    expect(mapa.mapa[0][2][0]).toBe(1);
+    expect(mapa.mapa[1][2][0]).toBe(1);
+    expect(mapa.mapa[0][2][2].paquetesProcesados[0].tiempo).toBe(2);
+    //console.log("EL ULTIMOOO");
+    mapa.moverPaquetes();
+    //console.log(mapa.mapa);
+    expect(mapa.mapa[0][0]).toBe(0);
+    expect(mapa.mapa[0][1][0]).toBe(0);
+    expect(mapa.mapa[0][2][0]).toBe(0);
+    expect(mapa.mapa[0][3][0]).toBe(1);
+    expect(mapa.mapa[1][3][0]).toBe(1);
+    expect(mapa.mapa[0][3][2].paquetesProcesados[0].tiempo).toBe(3);
+    //jose aca agrege un test para saber q se agregaron al array destino 0
+    //console.log(mapa.destinos[0].paquetes);
     expect((mapa.destinos[0].paquetes).length).toBe(1);
     
 })
