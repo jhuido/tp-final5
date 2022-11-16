@@ -53,15 +53,14 @@ function Mapa(locales,destinos,colaEsperas,centros){
                     while(paquete!=null){
                         paquete.aumentarTiempo();
                         console.log(paquete);
-
+                        this.destinos[i].recibePaquetes(paquete);
                         this.mapa[i][j+1][2].agregarPaquetes(paquete);
                         this.mapa[i][j+1][0]+=1;
                         this.mapa[i][j][0]-=1;
                         paquete=this.mapa[i][j][2].paquetesProcesados.pop();
 
 
-                    }
-                        
+                    }   
                     
                     
                 }else if(j==0){ // si esta en la cola de salida de algun local
