@@ -100,10 +100,10 @@ function Mapa(locales,destinos,colaEsperas,centros){
                         if(index>i){
                             this.mapa[i+1][j+1][2].agregarPaquetes(paquete);
                             this.mapa[i+1][j+1][0]+=1;
-                        }if(index<i){
+                        }else if(index<i){
                             this.mapa[i-1][j+1][2].agregarPaquetes(paquete);
                             this.mapa[i-1][j+1][0]+=1;
-                        }if(index==i){
+                        }else if(index==i){
                             this.mapa[i][j+1][2].agregarPaquetes(paquete);
                             this.mapa[i][j+1][0]+=1;
                         }
