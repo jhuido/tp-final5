@@ -40,7 +40,7 @@ test("Paquete en cola de salida",()=>{
 })
 
 test("Mover paquetes",()=>{
-    mapa.localGenerePaquete(mapa.locales[0],[[mapa.destinos[0],6],[mapa.destinos[0],5]]);
+    mapa.localGenerePaquete(mapa.locales[0],[[mapa.destinos[1],6],[mapa.destinos[0],5]]);
     //console.log(mapa.mapa);
     mapa.moverPaquetes();
     //console.log(mapa.mapa);
