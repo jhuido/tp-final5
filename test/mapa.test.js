@@ -159,3 +159,10 @@ test("Nombre del centro del primer local",()=>{
     expect(mapa.mapa[0][1][2].nombre).toBe("Facturacion");
     expect(mapa.mapa[0][2][2].nombre).toBe("Calidad");
 })
+
+test("Centros con paquetes ordenados por prioridad",()=>{
+    mapa.localGenerePaquete(mapa.locales[0],[[mapa.destinos[0],6],[mapa.destinos[1],7]]);
+    mapa.moverPaquetes();
+
+    expect(mapa.mapa[0][1][2].paquetesProcesados[0].urgencia).toBe(6);
+})
