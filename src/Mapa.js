@@ -63,7 +63,7 @@ function Mapa(locales,destinos,colaEsperas,centros){
                     }   
                     
                     
-                }else if(j==0){ // si esta en la cola de salida de algun local
+                }else if(j==0 && this.mapa[i][j]>0){ // si esta en la cola de salida de algun local
                     while(this.mapa[i][j]>0 && this.mapa[i][j+1][0]<this.mapa[i][j+1][1]){ // pasar a arriba diagonal
                         this.mapa[i][j+1][0]+=1;
                         paquete=this.locales[i].coladeSalida.pop();
@@ -89,7 +89,7 @@ function Mapa(locales,destinos,colaEsperas,centros){
                             this.mapa[i][j]-=1;
                         }
                     }
-                }else if(j>1 && j<parseInt(this.columnas)-1 && this.mapa[i][j][0]>0){ // si esta entre los centros
+                }else if(j>=1 && j<parseInt(this.columnas)-1 && this.mapa[i][j][0]>0){ // si esta entre los centros
                     while(this.mapa[i][j][0]>0 && this.mapa[i][j+1][0]<this.mapa[i][j+1][1]){
                         paquete=this.mapa[i][j][2].paquetesProcesados.pop();
                         paquete.aumentarTiempo(); 
