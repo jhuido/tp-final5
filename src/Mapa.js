@@ -49,6 +49,13 @@ function Mapa(locales,destinos,colaEsperas,centros){
                 if(j==(this.columnas-1) && this.mapa[i][j][0]>0){  //si esta en la ultima instancia
                     //console.log("HELO");
                     //console.log( this.mapa[i][j][2]);
+                    while(this.mapa[i][j][0]>0){
+                        paquete=this.mapa[i][j][2].paquetesProcesados.pop();
+                        paquete.aumentarTiempo();
+                        this.destinos[i].agregarPaquetes(paquete);
+                        this.mapa[i][j][0]-=1;
+                    }
+                    /*
                     paquete=this.mapa[i][j][2].paquetesProcesados.pop();
                     while(paquete!=null){
                         paquete.aumentarTiempo();
@@ -63,7 +70,7 @@ function Mapa(locales,destinos,colaEsperas,centros){
 
                     }   
                     
-                    
+                    */
                 }else if(j==0){ // si esta en la cola de salida de algun local
                     while(this.mapa[i][j]>0 && this.mapa[i][j+1][0]<this.mapa[i][j+1][1]){ // pasar a arriba diagonal
                         this.mapa[i][j+1][0]+=1;
