@@ -91,8 +91,6 @@ function Mapa(locales,destinos,colaEsperas,centros){
                     }
                 }else if(j>1 && j<this.columnas-1 && this.mapa[i][j][0]>0){ // si esta entre los centros
                     while(this.mapa[i][j][0]>0 && this.mapa[i][j+1][0]<this.mapa[i][j+1][1]){
-                        //console.log("HOLAAA");
-                        console.log(this.mapa[i][j][2]);
                         paquete=this.mapa[i][j][2].paquetesProcesados.pop();
                         paquete.aumentarTiempo(); 
                         this.mapa[i][j+1][2].agregarPaquetes(paquete);
